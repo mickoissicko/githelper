@@ -9,6 +9,8 @@ void setup()
 
     Preferences = fopen("cfg/pref.yml", "w");
 
+    fprintf(Preferences, "# By default, both flags are set to True\n");
+
     do
     {
         getchar();
