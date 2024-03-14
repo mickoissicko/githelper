@@ -7,7 +7,7 @@ int main()
 
     while (1)
     {
-        printf("Git Helper [v0.2.1 RC2]\n");
+        printf("Git Helper [v1.0.0]\n");
         printf("[1] Start\n");
         printf("[2] Configure\n");
         printf("[X] Quit\n");
