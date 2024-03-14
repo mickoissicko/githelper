@@ -11,6 +11,7 @@ int main()
         printf("Git Helper [v1.0.0]\n");
         printf("[1] Start\n");
         printf("[2] Configure\n");
+        printf("[R] Reset\n");
         printf("[X] Quit\n");
 
         scanf("%c", &Ui);
@@ -27,6 +28,11 @@ int main()
 
             case 'X':
             case 'x':
+                break;
+
+            case 'R':
+            case 'r':
+                resetcfg();
                 break;
 
             case 'Q':
