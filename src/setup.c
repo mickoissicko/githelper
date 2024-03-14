@@ -1,3 +1,6 @@
+// Currently a placeholder function!
+
+/*
 #include <stdio.h>
 
 #define MAXLEN 1024
@@ -16,3 +19,4 @@ void setup() {
  
     return 0;
 }
+*/
