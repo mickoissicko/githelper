@@ -8,8 +8,7 @@ int main()
     do
     {
         printf("Git Helper [v0.1]\n");
-        printf("[1] Setup\n");
-        printf("[2] Quickstart");
+        printf("[1] Start\n");
         printf("[X] Exit\n");
     }
     while(
@@ -17,13 +16,16 @@ int main()
         Ui != '1'
     );
 
+    // placeholder function
+    /*
+        if (Ui == '1')
+        {
+            printf("Setting up...\n");
+            setup();
+        }
+    */
+    
     if (Ui == '1')
-    {
-        printf("Setting up...\n");
-        setup();
-    }
-
-    else if (Ui == '2')
     {
         cmds();
     }
