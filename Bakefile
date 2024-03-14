@@ -1,11 +1,11 @@
 ! No more makefile :D
 
-run: [cd src/ && g++]
-src: [main.c setup.c];
-out: [bin/out];
+run: [cd src/ && g++];
+src: [main.c cmds.cpp];
+out: [../bin/out];
 
 !main{
-    >[run] [src] -o [out];
+    >[run] -o [out] [src];
 }
 
 !serve{}
