@@ -1,3 +1,4 @@
+# By default, both flags are set to True
 MakeFiles: True
 Cleanup: True
 # Change the value of MakeFiles to false if: 
