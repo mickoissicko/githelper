@@ -1,45 +1,95 @@
 #include <iostream>
-#include <unistd.h>
 #include <fstream>
+#include <unistd.h>
 #include <string>
 
 void cmds()
 {
-    std::string Path;
-    std::string File;
-    std::string FormattedStr;
+    char Ui;
 
-    std::ifstream Pref("cfg/pref");
+    std::string file;
+    std::string msg;
+    std::string comstr;
+    std::string addstr;
 
-    Pref >> Path;
-    Pref.close();
+    do
+    {
+        std::cout << "Make files? [y/n]: ";
+        std::cin >> Ui;
 
-    {   // make files (addfiles && commit)
-        std::ofstream MakeAddFiles("addfiles");
-        MakeAddFiles.close();
+        if (Ui == 'n' || Ui == 'N')
+        {
+            std::cout << "...hurry up then" << std::endl;
+        }
+    }
+    while (
+        Ui != 'y' && Ui != 'Y' &&
+        Ui != 'n' && Ui != 'n'
+    );
 
-        std::ofstream MakeCommit("commit");
-        MakeCommit.close();
+    if (Ui == 'y' || Ui == 'Y')
+    {
+        std::ofstream Make1("addfiles");
+        Make1.close();
+
+        std::ofstream Make2("commit");
+        Make2.close();
     }
 
-    {   // add files
-        std::ifstream AddFiles("addfiles");
-        
-        while(AddFiles.peek() != EOF)
+    do
+    {
+        std::cout << "Done editing? [y/n]: ";
+        std::cin >> Ui;
+    }
+    while (
+        Ui != 'y' && Ui != 'Y'
+    );
+
+    std::ifstream Add("addfiles");
+
+    if (Add.is_open())
+    {
+        while (getline(Add, file))
         {
-            AddFiles >> File;            
-            FormattedStr = "git add " + File;        
+            addstr = "git add " + file;
 
-            std::ifstream Commit("commit");
-
-            while(Commit.peek() != EOF)
-            {
-                
-            }
-
-            Commit.close();
+            system(addstr.c_str());
         }
+    }
 
-        AddFiles.close();
+    Add.close();
+
+    std::ifstream Com("commit");
+
+    if (Com.is_open())
+    {
+        while (getline(Com, msg))
+        {
+            comstr = "git commit -m \"" + msg + "\"";
+        
+            system(comstr.c_str());
+        }
+    }
+
+    Com.close();
+
+    do
+    {
+        std::cout << "Push? [y/n]: ";
+        std::cin >> Ui;
+    }
+    while (
+        Ui != 'y' && Ui != 'Y' &&
+        Ui != 'n' && Ui != 'n'
+    );
+
+    if (Ui == 'y' || Ui == 'Y')
+    {
+        system("git push");
+    }
+
+    else
+    {
+        return;
     }
 }
