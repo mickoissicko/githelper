@@ -28,7 +28,7 @@ int main()
         case 'X':
         case 'x':
             break;
-        
+
         case 'Q':
         case 'q':
             break;
