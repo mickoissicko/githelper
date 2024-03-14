@@ -7,7 +7,7 @@ int main()
 
     do
     {
-        printf("Git Helper [v0.1.1a]\n");
+        printf("Git Helper [v0.1.2a]\n");
         printf("[1] Start\n");
         printf("[X] Exit\n");
     }
