@@ -12,4 +12,8 @@ win_out: [bin/win.exe]
     >gcc [src] -o [win_out];
 }
 
+!main{
+    ! Nothing here right now
+}
+
 !serve{}
