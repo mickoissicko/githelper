@@ -1,0 +1,7 @@
+MakeFiles: True
+Cleanup: True
+# Change the value of MakeFiles to false if: 
+# You do not want the program to automatically make 'commit' and 'addfiles' files
+# Change it to true if you do want that behaviour
+#
+# The cleanup flag just deletes those files upon exit
