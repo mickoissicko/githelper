@@ -22,7 +22,7 @@ void cmds()
             std::cout << "...hurry up then" << std::endl;
         }
     }
-    while (
+    while(
         Ui != 'y' && Ui != 'Y' &&
         Ui != 'n' && Ui != 'n'
     );
@@ -41,7 +41,7 @@ void cmds()
         std::cout << "Done editing? [y/n]: ";
         std::cin >> Ui;
     }
-    while (
+    while(
         Ui != 'y' && Ui != 'Y'
     );
 
@@ -78,7 +78,7 @@ void cmds()
         std::cout << "Push? [y/n]: ";
         std::cin >> Ui;
     }
-    while (
+    while(
         Ui != 'y' && Ui != 'Y' &&
         Ui != 'n' && Ui != 'n'
     );
