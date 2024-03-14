@@ -52,7 +52,7 @@ void setup()
         Clf != 'N'
     );
 
-    switch (Mkf)
+    switch (Clf)
     {
         case 'Y':
         case 'y':
