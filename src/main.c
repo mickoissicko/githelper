@@ -10,10 +10,12 @@ int main()
         printf("Git Helper [v0.1.2a]\n");
         printf("[1] Start\n");
         printf("[X] Exit\n");
+
+        scanf("%c", &Ui);
     }
     while(
-        Ui != 'X' || 'x' &&
-        Ui != '1'
+        Ui != '1' &&
+        Ui != 'X' || 'x'
     );
 
     // placeholder function
