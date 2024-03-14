@@ -1,3 +1,5 @@
+#include "../common/calls.h"
+
 #include <iostream>
 #include <fstream>
 #include <unistd.h>
@@ -11,23 +13,12 @@ void cmds()
     std::string msg;
     std::string comstr;
     std::string addstr;
+    std::string conf;
 
-    do
-    {
-        std::cout << "Make files? [y/n]: ";
-        std::cin >> Ui;
+    std::ifstream YamlCfg("cfg/pref.yml");
+    getline(YamlCfg, conf);
 
-        if (Ui == 'n' || Ui == 'N')
-        {
-            std::cout << "...hurry up then" << std::endl;
-        }
-    }
-    while(
-        Ui != 'y' && Ui != 'Y' &&
-        Ui != 'n' && Ui != 'n'
-    );
-
-    if (Ui == 'y' || Ui == 'Y')
+    if (conf == "MakeFiles: True")
     {
         std::ofstream Make1("addfiles");
         Make1.close();
@@ -35,6 +26,36 @@ void cmds()
         std::ofstream Make2("commit");
         Make2.close();
     }
+
+    else if (conf == "MakeFiles: False")
+    {
+        do
+        {
+            std::cout << "Create files? [y/n]: ";
+            std::cin >> Ui;
+        }
+        while(
+            Ui != 'Y' && Ui != 'y' &&
+            Ui != 'N' && Ui != 'n'
+        );
+
+        if (Ui == 'Y' || Ui == 'y')
+        {
+            std::ofstream Make1("addfiles");
+            Make1.close();
+
+            std::ofstream Make2("commit");
+            Make2.close();
+        }
+    }
+
+    else
+    {
+        std::cerr << "Invalid format" << std::endl;
+        exit(1);
+    }
+
+    YamlCfg.close();
 
     do
     {
@@ -72,6 +93,30 @@ void cmds()
     }
 
     Com.close();
+
+    std::ifstream Yaml("cfg/pref.yml");
+
+    getline(Yaml, conf); // skip first line
+    getline(Yaml, conf); // get cleanup value
+
+    if (conf == "Cleanup: True")
+    {
+        std::remove("addfiles");
+        std::remove("commit");
+    }
+
+    else if (conf == "Cleanup: False")
+    {
+        Yaml.close();
+    }
+
+    else
+    {
+        std::cerr << "Invalid format" << std::endl;
+        exit(1);
+    }
+
+    Yaml.close();
 
     do
     {
