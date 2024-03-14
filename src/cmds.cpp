@@ -16,7 +16,9 @@ void cmds()
     std::string conf;
 
     std::ifstream YamlCfg("cfg/pref.yml");
-    getline(YamlCfg, conf);
+    
+    getline(YamlCfg, conf); // skip comment
+    getline(YamlCfg, conf); // get first flag
 
     if (conf == "MakeFiles: True")
     {
@@ -96,7 +98,8 @@ void cmds()
 
     std::ifstream Yaml("cfg/pref.yml");
 
-    getline(Yaml, conf); // skip first line
+    getline(Yaml, conf); // skip comment
+    getline(Yaml, conf); // skip second flag
     getline(Yaml, conf); // get cleanup value
 
     if (conf == "Cleanup: True")
