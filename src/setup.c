@@ -71,8 +71,3 @@ void setup()
 
     fclose(Preferences);
 }
-
-int main()
-{
-    setup();
-}
