@@ -1,6 +1,11 @@
 ! No more makefile :D
 
-src: []
-out: [bin/out]
+src: [main.c setup.c];
+out: [bin/out];
+
+!main{
+    >cd src/;
+    >gcc [src] -o [out];
+}
 
 !serve{}
