@@ -4,5 +4,6 @@
     #define CALLS_H
 #endif
 
+void resetcfg();
 void setup();
 void cmds();
