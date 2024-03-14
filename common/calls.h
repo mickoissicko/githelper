@@ -5,3 +5,4 @@
 #endif
 
 void setup();
+void cmds();

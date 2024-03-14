@@ -9,6 +9,7 @@ int main()
     {
         printf("Git Helper [v0.1]\n");
         printf("[1] Setup\n");
+        printf("[2] Quickstart");
         printf("[X] Exit\n");
     }
     while(
@@ -20,6 +21,11 @@ int main()
     {
         printf("Setting up...\n");
         setup();
+    }
+
+    else if (Ui == '2')
+    {
+        cmds();
     }
 
     else if (Ui == 'X' || Ui == 'x')
