@@ -31,7 +31,6 @@ int main()
         
         case 'Q':
         case 'q':
-            printf(":D\n");
             break;
     }
 
