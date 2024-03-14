@@ -1,19 +1,6 @@
 ! No more makefile :D
 
 src: []
-nix_out: [bin/nix]
-win_out: [bin/win.exe]
-
-!nix{
-    >gcc [src] -o [nix_out];
-}
-
-!win{
-    >gcc [src] -o [win_out];
-}
-
-!main{
-    ! Nothing here right now
-}
+out: [bin/out]
 
 !serve{}
