@@ -5,54 +5,43 @@
 #include <string.h>
 #include <stdbool.h>
 
-#define BUF_SIZE 1024
-
-int main()
+int main(int argc, char* argv[])
 {
     char Ui;
+
+    if (argc == 2)
+    {
+        if (strcasecmp(argv[1], "-cfg") == 0)
+        {
+            setup();
+        }
+    }
 
     autostart();
 
     while (1)
     {
-        printf("Git Helper [v1.0.4 RC4]\n");
-        printf("[1] Start\n");
-        printf("[2] Configure\n");
-        printf("[R] Reset\n");
-        printf("[X] Quit\n");
+        printf("Git Helper [v1.1.0]\n");
+        printf("Hello user!\n");
+        printf("You are seeing this message because you haven't: \n");
+        printf("- Configured '.githelper'\n");
+        printf("- Or have the 'pref.yml' file in this directory\n");
+        printf("Read the docs to find out more!\n");
+        printf("\n");
+        printf("You can also run GitHelper with '-cfg' to make the configuration file!\n");
+        printf("Type X to exit and acknowledge...\n");
 
+        printf("> ");
         scanf("%c", &Ui);
 
         switch (Ui)
         {
-            case '1':
-                cmds();
-                break;
-
-            case '2':
-                setup();
-                break;
-
             case 'X':
             case 'x':
                 break;
-
-            case 'R':
-            case 'r':
-                resetcfg();
-                break;
-
-            case 'Q':
-            case 'q':
-                break;
         }
 
-        if (Ui == 'Q' || Ui == 'q')
-        {
-            break;
-        }
-
-        else if (Ui == 'X' || Ui == 'x')
+        if (Ui == 'X' || Ui == 'x')
         {
             break;
         }

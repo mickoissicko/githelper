@@ -4,8 +4,9 @@
     #define CALLS_H
 #endif
 
-void resetcfg();
+#include <stdbool.h>
+
+void getpath();
 void setup();
-void cmds();
+void cmds(bool custom);
 void autostart();
-void alt_cfgger();

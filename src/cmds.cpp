@@ -5,17 +5,31 @@
 #include <unistd.h>
 #include <string>
 
-void cmds()
+void cmds(bool custom)
 {
     char Ui;
 
     std::string file;
+    std::string fn;
     std::string msg;
     std::string comstr;
     std::string addstr;
     std::string conf;
 
-    std::ifstream YamlCfg("cfg/pref.yml");
+    if (custom)
+    {
+        std::ifstream GCfg(".githelper");
+        getline(GCfg, conf);
+
+        fn = conf;
+    }
+
+    else
+    {
+        fn = "pref.yml";
+    }
+
+    std::ifstream YamlCfg(fn);
     
     getline(YamlCfg, conf); // skip comment
     getline(YamlCfg, conf); // get first flag
@@ -91,7 +105,7 @@ void cmds()
     }
     Com.close();
 
-    std::ifstream Yaml("cfg/pref.yml");
+    std::ifstream Yaml(fn);
     getline(Yaml, conf); // skip comment
     getline(Yaml, conf); // skip first flag
     getline(Yaml, conf); // get cleanup value
@@ -114,7 +128,7 @@ void cmds()
     }
     Yaml.close();
 
-    std::ifstream Push("cfg/pref.yml");
+    std::ifstream Push(fn);
     getline(Push, conf); // skip comment
     getline(Push, conf); // skip first flag
     getline(Push, conf); // skip second flag
