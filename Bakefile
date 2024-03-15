@@ -1,7 +1,7 @@
 ! No more makefile :D
 
 run: [cd src/ && g++];
-src: [reset/clean.c main.c cmds.cpp setup.c];
+src: [auto/autostart.c reset/clean.c main.c cmds.cpp setup.c];
 out: [../bin/app];
 
 !main{
