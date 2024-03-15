@@ -2,7 +2,7 @@
 
 void setup()
 {
-    FILE *Preferences;
+    FILE* Preferences;
 
     char Mkf;
     char Clf;
