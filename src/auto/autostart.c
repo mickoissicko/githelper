@@ -11,11 +11,8 @@ void autostart()
 {
     FILE *Cfg;
 
-    bool Auto;
-
     char Line[MAX_LN_LEN];
     char Auto_On[] = "Autostart: On";
-    char Auto_Off[] = "Autostart: Off";
 
     Cfg = fopen("cfg/pref.yml", "r");
 
@@ -29,75 +26,39 @@ void autostart()
     {
         if (strstr(Line, Auto_On))
         {
-            Auto = true;
-        }
-
-        else if (strstr(Line, Auto_Off))
-        {
-            Auto = false;
+            printf("on\n");
+            exit(0);
         }
     }
 
-    if (Auto)
-    {
-        cmds();
-        exit(0);
-    }
-
-    return;
+    printf("off\n");
 }
 
 void alt_cfgger()
 {
-    FILE* Dgh; // dot git helper file
-    FILE* Pyf; // path to yaml file
-    FILE* Cfg;
-
-    bool Auto;
+    FILE* git_file;
+    FILE* usr_file;
 
     char Line[MAX_LN_LEN];
     char Auto_On[] = "Autostart: On";
-    char Auto_Off[] = "Autostart: Off";
-    char* Filename;
 
-    Dgh = fopen(".githelper", "r");
+    git_file = fopen(".githelper", "r");
 
-    if (Dgh == NULL)
-    {
-        printf("'.githelper' file needed if project does not contain YAML configuration files\n");
-        exit(1);
-    }
+    fgets(Line, MAX_LN_LEN, git_file);
+    fclose(git_file);
 
-    fgets(Line, MAX_LN_LEN, Dgh);
-    Filename = Line;
-    fclose(Dgh);
+    usr_file = fopen(Line, "r");
 
-    Cfg = fopen(Filename, "r");
-    
-    if (Cfg == NULL)
-    {
-        printf("Invalid path provided in '.githelper'!\n");
-        exit(1);
-    }
-
-    while(fgets(Line, MAX_LN_LEN, Cfg))
+    while (fgets(Line, MAX_LN_LEN, usr_file))
     {
         if (strstr(Line, Auto_On))
         {
-            Auto = true;
-        }
-
-        else if (strstr(Line, Auto_Off))
-        {
-            Auto = false;
+            printf("on\n");
+            exit(0);
         }
     }
 
-    if (Auto)
-    {
-        cmds();
-        exit(0);
-    }
+    printf("off\n");
 
-    fclose(Cfg);
+    fclose(usr_file);
 }
