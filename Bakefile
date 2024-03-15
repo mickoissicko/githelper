@@ -2,7 +2,7 @@
 
 run: [cd src/ && g++];
 src: [reset/clean.c main.c cmds.cpp setup.c];
-out: [../bin/out];
+out: [../bin/app];
 
 !main{
     >[run] -o [out] [src];
