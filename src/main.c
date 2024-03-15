@@ -15,7 +15,7 @@ int main()
 
     while (1)
     {
-        printf("Git Helper [v1.0.2 RC2]\n");
+        printf("Git Helper [v1.0.4 RC4]\n");
         printf("[1] Start\n");
         printf("[2] Configure\n");
         printf("[R] Reset\n");
