@@ -8,3 +8,4 @@ void resetcfg();
 void setup();
 void cmds();
 void autostart();
+void alt_cfgger();
