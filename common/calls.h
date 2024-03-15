@@ -7,3 +7,4 @@
 void resetcfg();
 void setup();
 void cmds();
+void autostart();

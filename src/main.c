@@ -1,10 +1,17 @@
 #include "../common/calls.h"
 
 #include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <stdbool.h>
+
+#define BUF_SIZE 1024
 
 int main()
 {
     char Ui;
+
+    autostart();
 
     while (1)
     {
@@ -49,8 +56,6 @@ int main()
         {
             break;
         }
-
-        while(getchar() != '\n');
     }
 
     return 0;

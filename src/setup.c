@@ -87,17 +87,17 @@ void setup()
     {
         case 'Y':
         case 'y':
-            fprintf(Preferences, "AutoPush: True\n");
+            fprintf(Preferences, "AutoPush: On\n");
             break;
         
         case 'N':
         case 'n':
-            fprintf(Preferences, "AutoPush: False\n");
+            fprintf(Preferences, "AutoPush: Off\n");
             break;
     }
 
     // auto start
-    fprintf(Preferences, "Autostart: False\n");
+    fprintf(Preferences, "Autostart: Off\n");
     fprintf(Preferences, "# Autostart can only be changed manually\n");
     fprintf(Preferences, "#\n");
     fprintf(Preferences, "# The Autostart flag automatically starts Gelper\n");
