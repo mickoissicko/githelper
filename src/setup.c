@@ -6,11 +6,13 @@ void setup()
 
     char Mkf;
     char Clf;
+    char Psh;
 
     Preferences = fopen("cfg/pref.yml", "w");
 
-    fprintf(Preferences, "# By default, both flags are set to True\n");
+    fprintf(Preferences, "# By default, some flags are true/false\n");
 
+    // auto create
     do
     {
         getchar();
@@ -38,6 +40,7 @@ void setup()
             break;
     }
 
+    // autoclean
     do
     {
         getchar();
@@ -51,7 +54,7 @@ void setup()
         Clf != 'n' &&
         Clf != 'N'
     );
-
+    
     switch (Clf)
     {
         case 'Y':
@@ -65,6 +68,42 @@ void setup()
             break;
     }
 
+    // auto push
+    do
+    {
+        getchar();
+
+        printf("Automatically push? [y/n]: ");
+        scanf("%c", &Psh);
+    }
+    while(
+        Psh != 'y' &&
+        Psh != 'Y' &&
+        Psh != 'n' &&
+        Psh != 'N'
+    );
+
+    switch (Psh)
+    {
+        case 'Y':
+        case 'y':
+            fprintf(Preferences, "AutoPush: True\n");
+            break;
+        
+        case 'N':
+        case 'n':
+            fprintf(Preferences, "AutoPush: False\n");
+            break;
+    }
+
+    // auto start
+    fprintf(Preferences, "Autostart: False\n");
+    fprintf(Preferences, "# Autostart can only be changed manually\n");
+    fprintf(Preferences, "#\n");
+    fprintf(Preferences, "# The Autostart flag automatically starts Gelper\n");
+    fprintf(Preferences, "#\n");
+    fprintf(Preferences, "# The AutoPush flag pushes the changes automatically in the end\n");
+    fprintf(Preferences, "#\n");
     fprintf(Preferences, "# Change the value of MakeFiles to false if: \n");
     fprintf(Preferences, "# You do not want the program to automatically make 'commit' and 'addfiles' files\n");
     fprintf(Preferences, "# Change it to true if you do want that behaviour\n");
