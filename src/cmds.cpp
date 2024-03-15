@@ -56,7 +56,6 @@ void cmds()
         std::cerr << "Invalid format" << std::endl;
         exit(1);
     }
-
     YamlCfg.close();
 
     do
@@ -67,7 +66,6 @@ void cmds()
     while(
         Ui != 'y' && Ui != 'Y'
     );
-
     std::ifstream Add("addfiles");
 
     if (Add.is_open())
@@ -79,9 +77,7 @@ void cmds()
             system(addstr.c_str());
         }
     }
-
     Add.close();
-
     std::ifstream Com("commit");
 
     if (Com.is_open())
@@ -93,13 +89,11 @@ void cmds()
             system(comstr.c_str());
         }
     }
-
     Com.close();
 
     std::ifstream Yaml("cfg/pref.yml");
-
     getline(Yaml, conf); // skip comment
-    getline(Yaml, conf); // skip second flag
+    getline(Yaml, conf); // skip first flag
     getline(Yaml, conf); // get cleanup value
 
     if (conf == "Cleanup: True")
@@ -118,26 +112,40 @@ void cmds()
         std::cerr << "Invalid format" << std::endl;
         exit(1);
     }
-
     Yaml.close();
 
-    do
-    {
-        std::cout << "Push? [y/n]: ";
-        std::cin >> Ui;
-    }
-    while(
-        Ui != 'y' && Ui != 'Y' &&
-        Ui != 'n' && Ui != 'n'
-    );
+    std::ifstream Push("cfg/pref.yml");
+    getline(Push, conf); // skip comment
+    getline(Push, conf); // skip first flag
+    getline(Push, conf); // skip second flag
+    getline(Push, conf); // get autopush flag
 
-    if (Ui == 'y' || Ui == 'Y')
+    if (conf == "Autopush: False")
     {
+        do
+        {
+            std::cout << "Push? [y/n]: ";
+            std::cin >> Ui;
+        }
+        while(
+            Ui != 'y' && Ui != 'Y' &&
+            Ui != 'n' && Ui != 'n'
+        );
+
+        if (Ui == 'y' || Ui == 'Y')
+        {
+            system("git push");
+        }
+
+        else
+        {
+            return;
+        }
+    }
+
+    else if (conf == "Autopush: True")
+    {
+        std::cout << "pushing.." << std::endl;
         system("git push");
-    }
-
-    else
-    {
-        return;
     }
 }
