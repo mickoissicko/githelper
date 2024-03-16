@@ -1,8 +1,3 @@
-# Note
-**HEAVILY UNDER DEVELOPMENT**
-
-**STABILITY IS *NOT* GUARANTEED**
-
 ![](assets/gelper.png)
 <p align="center">
     <em>"it's pronounced gelper and not jelqer!"</em>
