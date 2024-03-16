@@ -150,28 +150,3 @@ void cmds(bool custom)
         std::cerr << "Invalid format" << std::endl;
     }
 }
-
-void commit()
-{
-    std::string addstr;
-    std::string comstr;
-    std::string line_1;
-    std::string line_2;
-
-    std::ifstream add("addfiles");
-    std::ifstream com("commit");
-
-    if (add.is_open() && com.is_open())
-    {
-        while (getline(add, line_1) && getline(com, line_2))
-        {
-            addstr = "git add " + line_1;
-            comstr = "git commit -m \"" + line_2 + "\"";
-
-            system(addstr.c_str());
-            system(comstr.c_str());
-        }
-        add.close();
-        com.close();
-    }
-}
