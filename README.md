@@ -29,10 +29,10 @@ The filenames are encased in [ and ], so you don't need to add those. There is n
 # Usage
 1. Download Git from [Git SCM downloads](https://git-scm.com/download)
 2. Download [Gelper](https://github.com/mickoissicko/githelper/releases)
-3. Open Gelper, and type '2' to go to the configure menu
-4. Set desired preferences
-5. Type '1' to start
-
+3. Open Gelper with the `-cfg` command-line argument
+4. Open the generated file '`pref.yml`'
+5. Set desired preferences
+6. Relaunch Gelper
 ## Info
 Contents of 'cfg/pref.yml' should look like this:
 ```
