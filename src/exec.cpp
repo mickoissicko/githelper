@@ -1,3 +1,5 @@
+#include "../common/calls.h"
+
 #include <unistd.h>
 #include <iostream>
 #include <fstream>
@@ -86,30 +88,8 @@ void cmds(bool custom)
     while(
         Ui != 'y' && Ui != 'Y'
     );
-    std::ifstream Add("addfiles");
 
-    if (Add.is_open())
-    {
-        while (getline(Add, file))
-        {
-            addstr = "git add " + file;
-
-            system(addstr.c_str());
-        }
-    }
-    Add.close();
-    std::ifstream Com("commit");
-
-    if (Com.is_open())
-    {
-        while (getline(Com, msg))
-        {
-            comstr = "git commit -m \"" + msg + "\"";
-        
-            system(comstr.c_str());
-        }
-    }
-    Com.close();
+    commit();
 
     std::ifstream Yaml(fn);
     getline(Yaml, conf); // skip comment
@@ -134,38 +114,64 @@ void cmds(bool custom)
     }
     Yaml.close();
 
-    std::ifstream Push(fn);
-    getline(Push, conf); // skip comment
-    getline(Push, conf); // skip first flag
-    getline(Push, conf); // skip second flag
-    getline(Push, conf); // get autopush flag
+    std::ifstream PushYn(fn);
+    getline(PushYn, conf); // skip comment
+    getline(PushYn, conf); // skip first flag
+    getline(PushYn, conf); // get cleanup value
+    getline(PushYn, conf); // get autopush flag
 
-    if (conf == "Autopush: Off")
+    if (conf == "AutoPush: Off")
     {
         do
         {
             std::cout << "Push? [y/n]: ";
             std::cin >> Ui;
         }
-        while(
-            Ui != 'y' && Ui != 'Y' &&
-            Ui != 'n' && Ui != 'n'
+        while (
+            Ui != 'y' &&
+            Ui != 'Y' &&
+            Ui != 'n' &&
+            Ui != 'n'
         );
 
         if (Ui == 'y' || Ui == 'Y')
         {
             system("git push");
         }
-
-        else
-        {
-            return;
-        }
     }
 
-    else if (conf == "Autopush: On")
+    else if (conf == "AutoPush: On")
     {
-        std::cout << "pushing.." << std::endl;
         system("git push");
+    }
+
+    else
+    {
+        std::cerr << "Invalid format" << std::endl;
+    }
+}
+
+void commit()
+{
+    std::string addstr;
+    std::string comstr;
+    std::string line_1;
+    std::string line_2;
+
+    std::ifstream add("addfiles");
+    std::ifstream com("commit");
+
+    if (add.is_open() && com.is_open())
+    {
+        while (getline(add, line_1) && getline(com, line_2))
+        {
+            addstr = "git add " + line_1;
+            comstr = "git commit -m \"" + line_2 + "\"";
+
+            system(addstr.c_str());
+            system(comstr.c_str());
+        }
+        add.close();
+        com.close();
     }
 }
