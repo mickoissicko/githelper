@@ -2,12 +2,21 @@
 #include "../common/calls.h"
 
 #include <stdio.h>
+#include <string.h>
 
-int main()
+int main(int argc, char* argv[])
 {
     char Ui;
     const int INFINITE = 1;
     int err = 1;
+
+    if (argc == 2)
+    {
+        if (strcmp(argv[1], "-cfg") == 0)
+        {
+            setup();
+        }
+    }
 
     start();
 
