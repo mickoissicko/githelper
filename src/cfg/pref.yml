@@ -1,7 +1,7 @@
 # By default, some flags are true/false
 MakeFiles: True
 Cleanup: True
-AutoPush: False
+AutoPush: Off
 Autostart: False
 # Autostart can only be changed manually
 #
