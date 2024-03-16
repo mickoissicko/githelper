@@ -1,11 +1,12 @@
+# Note
+**HEAVILY UNDER DEVELOPMENT**
+
+**STABILITY IS *NOT* GUARANTEED**
+
 ![](assets/gelper.png)
 <p align="center">
     <em>"it's pronounced gelper and not jelqer!"</em>
 </p>
-
-# Note
-**HEAVILY UNDER DEVELOPMENT**
-**STABILITY IS *NOT* GUARANTEED**
 
 # Gelper
 Gelper, or Git Helper is a cool tool if you do not want to use the default Git system for committing. In my opinion, I think Git's default system is pretty slow.
