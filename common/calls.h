@@ -6,7 +6,8 @@
 
 #include <stdbool.h>
 
-void getpath();
-void setup();
 void cmds(bool custom);
-void autostart();
+
+int check_files();
+void setup();
+void start();

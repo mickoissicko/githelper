@@ -2,5 +2,5 @@
 
 void clr_posix()
 {
-    system("clear");
+    system("cls");
 }

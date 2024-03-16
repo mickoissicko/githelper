@@ -1,11 +1,12 @@
-! No more makefile :D
+! Bakefile is my own version of Makefile
+! You can download it from my repositories! :D
 
 run: [cd src/ && g++];
-src: [start/autostart.c start/getpath.c setup.c main.c cmds.cpp];
-out: [../bin/app];
+src: [main.c check_files.c exec.cpp auto/start.c];
+out: [../bin/out]
 
 !main{
-    >[run] -o [out] [src];
+    >[run] [src] -o [out];
 }
 
 !serve{}

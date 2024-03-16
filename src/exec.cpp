@@ -1,8 +1,7 @@
-#include "../common/calls.h"
-
+#include <unistd.h>
 #include <iostream>
 #include <fstream>
-#include <unistd.h>
+#include <cstring>
 #include <string>
 
 void cmds(bool custom)
@@ -26,11 +25,18 @@ void cmds(bool custom)
 
     else
     {
-        fn = "pref.yml";
+        fn = "cfg/pref.yml";
     }
 
+    std::ifstream PrefYmlCfg("pref.yml");
+    if (PrefYmlCfg.is_open())
+    {
+        fn = "pref.yml";
+    }
+    PrefYmlCfg.close();
+
     std::ifstream YamlCfg(fn);
-    
+
     getline(YamlCfg, conf); // skip comment
     getline(YamlCfg, conf); // get first flag
 
@@ -134,7 +140,7 @@ void cmds(bool custom)
     getline(Push, conf); // skip second flag
     getline(Push, conf); // get autopush flag
 
-    if (conf == "Autopush: False")
+    if (conf == "Autopush: Off")
     {
         do
         {
@@ -157,7 +163,7 @@ void cmds(bool custom)
         }
     }
 
-    else if (conf == "Autopush: True")
+    else if (conf == "Autopush: On")
     {
         std::cout << "pushing.." << std::endl;
         system("git push");
