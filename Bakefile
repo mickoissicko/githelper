@@ -2,7 +2,7 @@
 ! You can download it from my repositories! :D
 
 run: [cd src/ && g++];
-src: [main.c check_files.c exec.cpp auto/start.c];
+src: [main.c exec.cpp auto/start.c];
 out: [../bin/out]
 
 !main{
