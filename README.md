@@ -36,9 +36,12 @@ The filenames are encased in [ and ], so you don't need to add those. There is n
 ## Info
 Contents of 'cfg/pref.yml' should look like this:
 ```
-# By default, both flags are set to True
+# By default, some flags are true/false
 MakeFiles: True
 Cleanup: True
+AutoPush: Off
+# The AutoPush flag pushes the changes automatically in the end
+#
 # Change the value of MakeFiles to false if: 
 # You do not want the program to automatically make 'commit' and 'addfiles' files
 # Change it to true if you do want that behaviour
@@ -52,4 +55,4 @@ If MakeFiles is set to true, then:
 If Cleanup is set to true, then:
 - Gelper automatically removes the files `commit` and `addfiles` after committing changes
 
-
+The AutoPush flag automatically pushes all of your changes to Github via `git push`. If it is off, it will prompt you if you want to push changes. If you choose no, Gelper will exit.
