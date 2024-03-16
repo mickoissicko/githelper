@@ -2,7 +2,7 @@
 ! You can download it from my repositories! :D
 
 run: [cd src/ && g++];
-src: [main.c exec.cpp auto/start.c commit.c];
+src: [setup.c main.c exec.cpp auto/start.c commit.c];
 out: [../bin/out]
 
 !main{
