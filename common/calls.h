@@ -6,8 +6,9 @@
 
 #include <stdbool.h>
 
-void cmds(bool custom);
-
 int check_files();
+
+void cmds(bool custom);
+void commit();
 void setup();
 void start();
