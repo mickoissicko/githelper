@@ -6,8 +6,6 @@
 
 #include <stdbool.h>
 
-int check_files();
-
 void cmds(bool custom);
 void commit();
 void setup();
