@@ -15,7 +15,12 @@ int main(int argc, char* argv[])
         if (strcmp(argv[1], "-cfg") == 0)
         {
             setup();
+
+            return 0;
         }
+        printf("Unrecognised argument\n");
+
+        return 0;
     }
 
     start();
@@ -24,7 +29,7 @@ int main(int argc, char* argv[])
     {
         while (INFINITE)
         {
-            printf("Git Helper [v1.1.0]\n");
+            printf("Git Helper [v1.1.1]\n");
             printf("\n");
             printf("Hello user!\n");
             printf("You are seeing this screen because you haven't: \n");
