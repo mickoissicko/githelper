@@ -2,11 +2,6 @@
 MakeFiles: True
 Cleanup: True
 AutoPush: Off
-Autostart: False
-# Autostart can only be changed manually
-#
-# The Autostart flag automatically starts Gelper
-#
 # The AutoPush flag pushes the changes automatically in the end
 #
 # Change the value of MakeFiles to false if: 
