@@ -15,12 +15,7 @@ void setup()
     fprintf(Preferences, "MakeFiles: True\n");
     fprintf(Preferences, "Cleanup: True\n");
     fprintf(Preferences, "AutoPush: Off\n");
-    fprintf(Preferences, "Autostart: Off\n");
 
-    fprintf(Preferences, "# Autostart can only be changed manually\n");
-    fprintf(Preferences, "#\n");
-    fprintf(Preferences, "# The Autostart flag automatically starts Gelper\n");
-    fprintf(Preferences, "#\n");
     fprintf(Preferences, "# The AutoPush flag pushes the changes automatically in the end\n");
     fprintf(Preferences, "#\n");
     fprintf(Preferences, "# Change the value of MakeFiles to false if: \n");
