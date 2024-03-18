@@ -1,0 +1,11 @@
+out: [../bin/out];
+run: [cd src/ && g++];
+src: [commit.cpp exec.cpp main.c setup.c auto/start.c];
+
+!main{
+    >[run] -o [out] [src];
+}
+
+!serve{
+    >echo 'done!';
+}
