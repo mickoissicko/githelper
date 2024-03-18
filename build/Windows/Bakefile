@@ -3,9 +3,10 @@
 
 run: [cd ../../src/ && g++];
 src: [setup.c main.c exec.cpp auto/start.c win32_commit.cpp];
+bld: [../build/out];
 
 !main{
-    >[run] [src] -o out;
+    >[run] [src] -o [bld];
 }
 
 !serve{}
