@@ -1,3 +1,7 @@
+! will add this later
+! going to add when arg-related functions are done
+! src: [commit.cpp exec.cpp main.c setup.c auto/start.c args/argcommit.c args/argparse.c];
+
 out: [../bin/out];
 run: [cd src/ && g++];
 src: [commit.cpp exec.cpp main.c setup.c auto/start.c];
