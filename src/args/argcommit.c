@@ -7,5 +7,10 @@ void argcommit(
     bool mk,
     bool ap
 ){
-    // nothing here yet
+    if (all)
+    {
+        cl = true;
+        mk = true;
+        ap = true;
+    }
 }
