@@ -5,6 +5,8 @@
 
 #define MAX_LN 2048
 
+using namespace std;
+
 void commit()
 {
     char buf_1[MAX_LN];
@@ -18,13 +20,13 @@ void commit()
 
     if (add.is_open() && com.is_open())
     {
-        while (std::getline(add, line_1) && std::getline(com, line_2))
+        while (getline(add, line_1) && getline(com, line_2))
         {
             snprintf(buf_1, sizeof(buf_1), "git add %s", line_1.c_str());
             snprintf(buf_2, sizeof(buf_2), "git commit -m \"%s\"", line_2.c_str());
 
-            std::system(buf_1);
-            std::system(buf_2);
+            system(buf_1);
+            system(buf_2);
         }
 
         add.close();
