@@ -9,7 +9,13 @@
 void argparse(int argc, char* argv[]);
 
 void cmds(bool custom);
-void argcommit(bool custom);
+
+void argcommit(
+    bool all,
+    bool cl,
+    bool mk,
+    bool ap
+);
 
 void commit();
 void setup();
