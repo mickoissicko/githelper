@@ -4,7 +4,7 @@
 
 #include <stdbool.h>
 
-void argparse(int argc, char* argv[]);
+int argparse(int argc, char* argv[]);
 
 void cmds(bool custom);
 
@@ -18,3 +18,5 @@ void argcommit(
 void commit();
 void setup();
 void start();
+void RegularExecution();
+void MkfStage2();

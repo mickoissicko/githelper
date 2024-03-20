@@ -10,18 +10,16 @@
 * -cl
 *****************************************************/
 
+#include "../../common/calls.h"
+
 #include <stdbool.h>
 #include <string.h>
 #include <stdlib.h>
 #include <stdio.h>
 
-void commit();
-void RegularExecution();
-void MkfStage2();
-
 #define MAX_ARG 4
 
-int main(int argc, char** argv)
+int argparse(int argc, char** argv)
 {
     FILE* f1;
     FILE* f2;
@@ -34,6 +32,7 @@ int main(int argc, char** argv)
     bool npr = false;
     bool clr = false;
     bool mkf = false;
+    bool atp = false;
 
     int index = 1;
 
@@ -42,6 +41,7 @@ int main(int argc, char** argv)
         if (!strcmp(argv[index], "-mk")) mkf = true;
         if (!strcmp(argv[index], "-np")) npr = true;
         if (!strcmp(argv[index], "-cl")) clr = true;
+        if (!strcmp(argv[index], "-ap")) atp = true;
 
         index++;
     }
@@ -100,6 +100,11 @@ int main(int argc, char** argv)
             remove("addfiles");
             remove("commit");
         }
+    }
+
+    if (atp)
+    {
+        system("git push");
     }
 
     else
