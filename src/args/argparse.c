@@ -90,7 +90,6 @@ int main(int argc, char** argv)
 
         while (Ui != 'Y' && Ui != 'y')
         {
-            getchar();
             printf("Done editing? [y]: ");
             scanf("%c", &Ui);
         }
@@ -98,7 +97,6 @@ int main(int argc, char** argv)
         if (Ui == 'y' || Ui == 'Y')
         {
             printf("reg exec...\n");
-            system("sleep 2");
             remove("addfiles");
             remove("commit");
         }
