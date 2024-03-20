@@ -1,10 +1,23 @@
-// NOT FINISHED
-// UNDER HEAVY DEVELOPMENT
+/*****************************************************
+* To-do list:
+* 1. Integrate less ambigous argument names, the list:
+*
+* -np  = -no-prompt = -no-confirm 
+* -mkf = -gen-files = -make-files
+*
+* 2. Add more arguments:
+*
+* -cl
+*****************************************************/
 
 #include <stdbool.h>
-#include <stdlib.h>
 #include <string.h>
+#include <stdlib.h>
 #include <stdio.h>
+
+void commit();
+void RegularExecution();
+void MkfStage2();
 
 #define MAX_ARG 4
 
@@ -52,30 +65,16 @@ int main(int argc, char** argv)
                     fclose(f1);
                     f2 = fopen("addfiles", "w");
                     fclose(f2);
+                    MkfStage2();
+                    if (clr)
+                    {
+                        remove(Com);
+                        remove(Add);
+                    }
                     break;
 
                 case 'N':
                 case 'n':
-                    break;
-            }
-        }
-
-        while (Ui != 'y' && Ui != 'Y')
-        {
-            getchar();
-
-            printf("Done editing? [y]: ");
-            scanf("%c", &Ui);
-            switch (Ui)
-            {
-                case 'Y':
-                case 'y':
-                    printf("reg exec...\n");
-                    if (clr)
-                    {
-                        remove(Com);
-                        remove (Add);
-                    }
                     break;
             }
         }
@@ -94,9 +93,10 @@ int main(int argc, char** argv)
             scanf("%c", &Ui);
         }
 
+        RegularExecution();
+
         if (Ui == 'y' || Ui == 'Y')
         {
-            printf("reg exec...\n");
             remove("addfiles");
             remove("commit");
         }
@@ -104,8 +104,25 @@ int main(int argc, char** argv)
 
     else
     {
-        //RegularExecution();
+        RegularExecution();
     }
 
     return 0;
+}
+
+void RegularExecution()
+{
+    commit();
+}
+
+void MkfStage2()
+{
+    char Ui;
+
+    while (Ui != 'y' && Ui != 'Y')
+    {
+        getchar();
+        printf("Done editing? [y]: ");
+        scanf("%c", &Ui);
+    }
 }
