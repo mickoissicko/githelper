@@ -90,7 +90,8 @@ int main(int argc, char** argv)
 
         while (Ui != 'Y' && Ui != 'y')
         {
-            printf("\nDone editing? [y]: ");
+            getchar();
+            printf("Done editing? [y]: ");
             scanf("%c", &Ui);
         }
 
