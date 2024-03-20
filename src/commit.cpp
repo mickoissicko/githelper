@@ -3,14 +3,14 @@
 #include <string>
 #include <cstdlib>
 
-#define MAX_LN 2048
+#define MAXLEN 2048
 
 using namespace std;
 
 void commit()
 {
-    char buf_1[MAX_LN];
-    char buf_2[MAX_LN];
+    char buf_1[MAXLEN];
+    char buf_2[MAXLEN];
 
     std::string line_1;
     std::string line_2;
