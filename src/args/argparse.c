@@ -1,115 +1,95 @@
-/*****************************************************
-* To-do list:
-* 1. Integrate less ambigous argument names, the list:
-*
-* -np  = -no-prompt = -no-confirm 
-* -mkf = -gen-files = -make-files
-*
-* 2. Add more arguments:
-*
-* -cl
-*****************************************************/
-
 #include "../../common/calls.h"
+#include "../../common/consts.h"
 
 #include <stdbool.h>
 #include <string.h>
 #include <stdlib.h>
 #include <stdio.h>
 
-#define MAX_ARG 4
-
 int argparse(int argc, char** argv)
 {
     FILE* f1;
     FILE* f2;
 
-    char Com[] = "commit";
-    char Add[] = "addfiles";
-
     char Ui = '\0';
 
-    bool npr = false;
-    bool clr = false;
-    bool mkf = false;
-    bool atp = false;
+    bool keepfile = false;
+    bool detached = false;
+    bool filenull = false;
 
     int index = 1;
 
     while (index < argc)
     {
-        if (!strcmp(argv[index], "-mk")) mkf = true;
-        if (!strcmp(argv[index], "-np")) npr = true;
-        if (!strcmp(argv[index], "-cl")) clr = true;
-        if (!strcmp(argv[index], "-ap")) atp = true;
+        if (!strcmp(argv[index], "--d")) detached = true;
+        if (!strcmp(argv[index], "--k")) keepfile = true;
+
+        //if (!strcmp(argv[index], "--detached")) detached = true;
+        //if (!strcmp(argv[index], "--keepfile")) keepfile = true;
 
         index++;
     }
 
-    // debugging purposes
-    if (mkf) puts("mkf");
-    if (npr) puts("npr");
-    if (clr) puts("clr");
-
-    if (mkf)
+    if (detached)
     {
-        while (Ui != 'y' && Ui != 'Y' && Ui != 'n' && Ui != 'N')
-        {
-            printf("Make files? [y/n]: ");
-            scanf("%c", &Ui);
-            switch (Ui)
-            {
-                case 'Y':
-                case 'y':
-                    f1 = fopen("commit", "w");
-                    fclose(f1);
-                    f2 = fopen("addfiles", "w");
-                    fclose(f2);
-                    MkfStage2();
-                    if (clr)
-                    {
-                        remove(Com);
-                        remove(Add);
-                    }
-                    break;
+        f1 = fopen("commit", "r");
+        f2 = fopen("addfiles", "r");
 
-                case 'N':
-                case 'n':
-                    break;
+        if (f1 != NULL) fclose(f1);
+        if (f2 != NULL) fclose(f2);
+        if (f1 == NULL) filenull = true;
+        if (f2 == NULL) filenull = true;
+        else filenull = false;
+
+        if (filenull)
+        {
+            while (Ui != 'y' && Ui != 'Y' && Ui != 'n' && Ui != 'N')
+            {
+                printf("Make files? [y/n]: ");
+                scanf("%c", &Ui);
+                switch (Ui)
+                {
+                    case 'Y':
+                    case 'y':
+                        f1 = fopen("commit", "w");
+                        fclose(f1);
+
+                        f2 = fopen("addfiles", "w");
+                        fclose(f2);
+
+                        StageTwo();
+
+                        if (!keepfile)
+                        {
+                            remove(Com);
+                            remove(Add);
+                        }
+
+                        break;
+
+                    case 'N':
+                    case 'n':
+                        StageTwo();
+                        if (!keepfile)
+                        {
+                            remove(Com);
+                            remove(Add);
+                        }
+                        break;
+                }
             }
         }
-    }
 
-    else if (npr)
-    {
-        f1 = fopen("commit", "w");
-        fclose(f1);
-        f2 = fopen("addfiles", "w");
-        fclose(f2);
-
-        while (Ui != 'Y' && Ui != 'y')
+        else
         {
-            printf("Done editing? [y]: ");
-            scanf("%c", &Ui);
+            if (!keepfile)
+            {
+                remove(Com);
+                remove(Add);
+            }
+
+            RegularExecution();
         }
-
-        RegularExecution();
-
-        if (Ui == 'y' || Ui == 'Y')
-        {
-            remove("addfiles");
-            remove("commit");
-        }
-    }
-
-    if (atp)
-    {
-        system("git push");
-    }
-
-    else
-    {
-        RegularExecution();
     }
 
     return 0;
@@ -117,10 +97,11 @@ int argparse(int argc, char** argv)
 
 void RegularExecution()
 {
+    printf("loading...\n");
     commit();
 }
 
-void MkfStage2()
+void StageTwo()
 {
     char Ui;
 
@@ -130,4 +111,6 @@ void MkfStage2()
         printf("Done editing? [y]: ");
         scanf("%c", &Ui);
     }
+
+    RegularExecution();
 }
