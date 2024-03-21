@@ -26,6 +26,11 @@ When you save the files and enter 'Y' when prompted if you are done, and when it
 
 The filenames are encased in [ and ], so you don't need to add those. There is no extra formatting to be done. I will add an option for that later, but for now, this is all you get. And it's very fast to use.
 
+# Info
+C++ had to be used because of some POSIX-specific functions not being compatible with/or being in Windows. Those functions were C++ specific, and yes, I could (hypothetically) make my own function or just blatantly plagiarise off of another person, but I wanted to use C++'s default function.
+
+And no, there weren't any good replacements instead of that function. Everything else sucked, made the code too complicated.
+
 # How to use
 Read [the official wiki](https://mick.gdn/wiki/githelper).
 
