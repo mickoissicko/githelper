@@ -4,19 +4,38 @@
 #include <stdio.h>
 #include <string.h>
 
-int main(int argc, char* argv[])
+int main(int argc, char** argv)
 {
-    if (argc == 2)
+    int index = 1;
+
+    puts("starting...");
+
+    bool keepfile = false;
+    bool detached = false;
+    bool filenull = false;
+    bool genprefs = false;
+
+    while (index < argc)
     {
-        if (strcmp(argv[1], "-cfg") == 0)
-        {
-            setup();
+        if (!strcmp(argv[index], "--d")) detached = true;
+        if (!strcmp(argv[index], "--k")) keepfile = true;
+        if (!strcmp(argv[index], "-cfg")) genprefs = true;
 
-            return 0;
-        }
+        //if (!strcmp(argv[index], "--detached")) detached = true;
+        //if (!strcmp(argv[index], "--keepfile")) keepfile = true;
 
-        printf("Unrecognised argument\n");
+        index++;
+    }
 
+    if (genprefs)
+    {
+        setup();
+        return 0;
+    }
+
+    else if (detached || keepfile)
+    {
+        argparse(argc, argv);
         return 0;
     }
 
