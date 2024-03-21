@@ -22,7 +22,7 @@ void commit()
     {
         while (getline(add, line_1) && getline(com, line_2))
         {
-            snprintf(buf_1, sizeof(buf_1), "git add %s", line_1.c_str());
+            snprintf(buf_1, sizeof(buf_1), "git add \"%s\"", line_1.c_str());
             snprintf(buf_2, sizeof(buf_2), "git commit -m \"%s\"", line_2.c_str());
 
             system(buf_1);
