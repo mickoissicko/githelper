@@ -58,13 +58,11 @@ int argparse(int argc, char** argv)
                         fclose(f2);
 
                         StageTwo();
-
                         if (!keepfile)
                         {
                             remove(Com);
                             remove(Add);
                         }
-
                         break;
 
                     case 'N':
@@ -82,21 +80,25 @@ int argparse(int argc, char** argv)
 
         else
         {
+            RegularExecution();
+
             if (!keepfile)
             {
                 remove(Com);
                 remove(Add);
             }
-
-            RegularExecution();
         }
     }
+
+    PromptForPush();
 
     return 0;
 }
 
 void RegularExecution()
 {
+    char Ui;
+
     printf("loading...\n");
     commit();
 }
@@ -107,10 +109,33 @@ void StageTwo()
 
     while (Ui != 'y' && Ui != 'Y')
     {
-        getchar();
         printf("Done editing? [y]: ");
-        scanf("%c", &Ui);
+        scanf(" %c", &Ui);
     }
 
     RegularExecution();
+}
+
+void PromptForPush()
+{
+    char Ui;
+
+    do
+    {
+        printf("Push? [y/n]: ");
+        scanf(" %c", &Ui);
+    }
+    while (Ui != 'Y' && Ui != 'y' && Ui != 'N' && Ui != 'n');
+
+    switch (Ui)
+    {
+        case 'Y':
+        case 'y':
+            system("git push");
+            break;
+
+        case 'N':
+        case 'n':
+            break;
+    }
 }
