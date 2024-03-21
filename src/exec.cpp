@@ -3,7 +3,6 @@
 #include <unistd.h>
 #include <iostream>
 #include <fstream>
-#include <cstring>
 #include <string>
 
 void cmds(bool custom)
@@ -53,15 +52,11 @@ void cmds(bool custom)
 
     else if (conf == "MakeFiles: False")
     {
-        do
+        while (Ui != 'Y' && Ui != 'y' && Ui != 'N' && Ui != 'n')
         {
             std::cout << "Create files? [y/n]: ";
             std::cin >> Ui;
         }
-        while(
-            Ui != 'Y' && Ui != 'y' &&
-            Ui != 'N' && Ui != 'n'
-        );
 
         if (Ui == 'Y' || Ui == 'y')
         {
@@ -80,14 +75,11 @@ void cmds(bool custom)
     }
     YamlCfg.close();
 
-    do
+    while (Ui != 'y' && Ui != 'Y')
     {
         std::cout << "Done editing? [y/n]: ";
         std::cin >> Ui;
     }
-    while(
-        Ui != 'y' && Ui != 'Y'
-    );
 
     commit();
 
@@ -122,17 +114,11 @@ void cmds(bool custom)
 
     if (conf == "AutoPush: Off")
     {
-        do
+        while (Ui != 'y' && Ui != 'Y' && Ui != 'n' && Ui != 'n')
         {
             std::cout << "Push? [y/n]: ";
             std::cin >> Ui;
         }
-        while (
-            Ui != 'y' &&
-            Ui != 'Y' &&
-            Ui != 'n' &&
-            Ui != 'n'
-        );
 
         if (Ui == 'y' || Ui == 'Y')
         {
