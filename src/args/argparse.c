@@ -24,8 +24,9 @@ int argparse(int argc, char** argv)
         if (!strcmp(argv[index], "--d")) detached = true;
         if (!strcmp(argv[index], "--k")) keepfile = true;
 
-        //if (!strcmp(argv[index], "--detached")) detached = true;
-        //if (!strcmp(argv[index], "--keepfile")) keepfile = true;
+        // might add later:
+        // if (!strcmp(argv[index], "--detached")) detached = true;
+        // if (!strcmp(argv[index], "--keepfile")) keepfile = true;
 
         index++;
     }
