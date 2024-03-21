@@ -15,8 +15,9 @@ void argcommit(
     bool ap
 );
 
+void RegularExecution();
+void StageTwo();
+
 void commit();
 void setup();
 void start();
-void RegularExecution();
-void MkfStage2();
