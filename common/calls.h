@@ -16,6 +16,7 @@ void argcommit(
 );
 
 void RegularExecution();
+void PromptForPush();
 void StageTwo();
 
 void commit();
