@@ -1,16 +1,15 @@
-#include <iostream>
+#include "../common/consts.h"
+
 #include <fstream>
 #include <string>
 #include <cstdlib>
-
-#define MAXLEN 2048
 
 using namespace std;
 
 void commit()
 {
-    char buf_1[MAXLEN];
-    char buf_2[MAXLEN];
+    char buf_1[MAX_LEN];
+    char buf_2[MAX_LEN];
 
     std::string line_1;
     std::string line_2;
