@@ -10,7 +10,7 @@ void setup()
 
     Preferences = fopen("pref.yml", "w");
 
-    fprintf(Preferences, "# By default, some flags are true/false\n");
+    fprintf(Preferences, "# USING YAML CONFIGURATION FILES HAS BEEN DEPRECATED!\n");
 
     fprintf(Preferences, "MakeFiles: True\n");
     fprintf(Preferences, "Cleanup: True\n");
