@@ -1,4 +1,4 @@
-# By default, some flags are true/false
+# USING YAML CONFIGURATION FILES HAS BEEN DEPRECATED!
 MakeFiles: True
 Cleanup: True
 AutoPush: Off
