@@ -16,9 +16,9 @@ int QuickStart(int argc, char* argv[])
     char ShowRelation[MAX_STR_LEN];
     char FilePath[MAX_STR_LEN];
 
-    strcpy(CommitMessage, argv[4]); // _str
-    strcpy(ShowRelation,  argv[3]); // _str
-    strcpy(FilePath,      argv[2]); // _str
+    strcpy(CommitMessage, argv[4]); // '--q' _str
+    strcpy(ShowRelation,  argv[3]); // '--q' _str
+    strcpy(FilePath,      argv[2]); // '--q' _str
 
     if (strcmp(ShowRelation, "::") == 0)
     {
