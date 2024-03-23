@@ -12,14 +12,10 @@ int main(int argc, char** argv)
     bool filenull = false;
     bool genprefs = false;
 
-    if (argc > 1)
+    if (strcmp(argv[1], "--q") == 0)
     {
-        if (strcmp(argv[1], "--q") == 0)
-        {
-            QuickStart(argc, argv);
-
-            return 0;
-        }
+        QuickStart(argc, argv);
+        return 0;
     }
 
     while (index < argc)
