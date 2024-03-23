@@ -1,7 +1,7 @@
 # Warning
 This project is heavily under-development. Do note that the **Windows executables** may not be as reliable as the POSIX binaries. This is because of my lousy laziness. Sorry in advance, but expect stable Windows executables soon!
 
-![](assets/gelper.png)
+![](templates/res/gelper.png)
 <p align="center">
     <em>"it's pronounced gelper and not jelqer!"</em>
 </p>
