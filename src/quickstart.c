@@ -1,4 +1,4 @@
-#include "../../common/consts.h"
+#include "../common/consts.h"
 
 #include <string.h>
 #include <stdlib.h>
