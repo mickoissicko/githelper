@@ -6,7 +6,7 @@
 
 int QuickStart(int argc, char* argv[])
 {
-    if (argc < MAX_ARG) return 1;
+    if (argc < MIN_ARG) return 1;
 
     unsigned long LEN = MAX_STR_LEN;
 
@@ -28,10 +28,12 @@ int QuickStart(int argc, char* argv[])
         system(SystemFormattedAdd);
         system(SystemFormattedMessage);
 
-        if (strcmp(argv[5], "!"))
+        if (strcmp(argv[5], "!push") == 0)
         {
             system("git push");
-        }   
+
+            return 0;
+        }
     }
 
     else return 1;
