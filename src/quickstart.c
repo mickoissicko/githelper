@@ -6,7 +6,7 @@
 
 int QuickStart(int argc, char* argv[])
 {
-    if (argc < 4) return 1;
+    if (argc < MAX_ARG) return 1;
 
     unsigned long LEN = MAX_STR_LEN;
 
@@ -16,9 +16,9 @@ int QuickStart(int argc, char* argv[])
     char ShowRelation[MAX_STR_LEN];
     char FilePath[MAX_STR_LEN];
 
-    strcpy(CommitMessage, argv[3]);
-    strcpy(ShowRelation,  argv[2]);
-    strcpy(FilePath,      argv[1]);
+    strcpy(CommitMessage, argv[4]); // _str
+    strcpy(ShowRelation,  argv[3]); // _str
+    strcpy(FilePath,      argv[2]); // _str
 
     if (strcmp(ShowRelation, "::") == 0)
     {
@@ -27,6 +27,11 @@ int QuickStart(int argc, char* argv[])
 
         system(SystemFormattedAdd);
         system(SystemFormattedMessage);
+
+        if (strcmp(argv[5], "!"))
+        {
+            system("git push");
+        }   
     }
 
     else return 1;
