@@ -10,7 +10,6 @@ int main(int argc, char** argv)
     bool keepfile = false;
     bool detached = false;
     bool filenull = false;
-    bool genprefs = false;
 
     if (strcmp(argv[1], "--q") == 0)
     {
@@ -22,24 +21,15 @@ int main(int argc, char** argv)
     {
         if (!strcmp(argv[index], "--d")) detached = true;
         if (!strcmp(argv[index], "--k")) keepfile = true;
-        if (!strcmp(argv[index], "-cfg")) genprefs = true;
 
         index++;
     }
 
-    if (genprefs)
-    {
-        setup();
-        return 0;
-    }
-
-    else if (detached || keepfile)
+    if (detached || keepfile)
     {
         argparse(argc, argv);
         return 0;
     }
-
-    start();
 
     return 0;
 }
