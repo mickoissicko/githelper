@@ -15,4 +15,4 @@ const char arg_keepfile_1[] = "--k";
 
 #define MAX_STR_LEN 4096
 #define MAX_LEN 2048
-#define MAX_ARG 4
+#define MAX_ARG 6
