@@ -34,6 +34,16 @@ int QuickStart(int argc, char* argv[])
 
             return 0;
         }
+
+        if (argc > 5)
+        {
+            if (strcmp(argv[5], "!push") == 0)
+            {
+                system("git push");
+
+                return 0;
+            }
+        }
     }
 
     else return 1;
