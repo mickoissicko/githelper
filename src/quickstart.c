@@ -6,7 +6,7 @@
 
 int QuickStart(int argc, char* argv[])
 {
-    if (argc < MIN_ARG) return 1;
+    if (argc < 2) return 1;
 
     unsigned long LEN = MAX_STR_LEN;
 
