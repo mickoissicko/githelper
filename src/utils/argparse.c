@@ -6,7 +6,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-int argparse(int argc, char** argv)
+int ArgParse(int argc, char** argv)
 {
     FILE* f1;
     FILE* f2;
