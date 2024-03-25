@@ -1,10 +1,17 @@
 // main.c
 #include "../common/calls.h"
 
+#include <stdio.h>
 #include <string.h>
 
 int main(int argc, char** argv)
 {
+    if (argc < 2)
+    {
+        printf("No arguments supplied?\n");
+        return 1;
+    }
+
     int index = 1;
 
     bool keepfile = false;
