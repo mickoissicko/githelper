@@ -33,6 +33,14 @@ int main(int argc, char** argv)
         AdvancedCopy(argc, argv);
     }
 
+    else if (
+        strcmp(argv[1], "--dc")  == 0 ||
+        strcmp(argv[1], "--dcg") == 0
+    ){
+        DirectCopy(argc, argv);
+        return 0;
+    }
+
     while (index < argc)
     {
         if (!strcmp(argv[index], "--d")) detached = true;
