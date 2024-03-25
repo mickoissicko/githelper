@@ -2,7 +2,7 @@
 
 out: [../bin/out];
 run: [cd src/ && g++];
-src: [utils/argparse.c utils/gitpush.c quickstart.c commit.cpp main.c advcopy.c];
+src: [utils/argparse.c utils/gitpush.c quickstart.c commit.cpp main.c advcopy.c drctcopy.c];
 
 !main{
     >[run] -o [out] [src];
