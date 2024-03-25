@@ -1,8 +1,5 @@
-// I realise this code is messy, can be improved, and know the ways to make it 'better'
-// Or more optimal
-// And I know that I shouldn't be nesting If-else statements like that, or using too many
-// conditions, and just using exits or returns bla bla bla
-// But I won't.
+// I realise this code is messy, can be improved, and know the ways to make it 'better'...
+// But I can't be arsed.
 
 #include "../common/calls.h"
 #include "../common/consts.h"
@@ -46,7 +43,6 @@ int AdvancedCopy(int argc, char** argv)
         return 0;
     }
 
-    // Same thing, but this appends '.git' to the end of the repo
     else if (strcmp(argv[1], "--cg") == 0)
     {
         printf("Username: ");
@@ -61,10 +57,6 @@ int AdvancedCopy(int argc, char** argv)
         return 0;
     }
 
-    // Archlinux User Repository related commands
-    // Kind of like an AUR-helper
-    // Except it's less-secure, and doesn't do most of the things modern AUR helpers do
-    // I'll be using this, though. I think it's easier. (For me, at least)
     else if (strcmp(argv[1], "--aur") == 0)
     {
         CreateTemp();
@@ -84,8 +76,6 @@ int AdvancedCopy(int argc, char** argv)
         return 0;
     }
 
-    // Same usage as the above, but 'nc' means 'no-clean'
-    // It won't delete the temp folder after exit
     else if (strcmp(argv[1], "--aur-nc") == 0)
     {
         CreateTemp();
