@@ -17,6 +17,15 @@ int main(int argc, char** argv)
         return 0;
     }
 
+    else if (
+        strcmp(argv[1], "--c")      == 0 ||
+        strcmp(argv[1], "--cg")     == 0 ||
+        strcmp(argv[1], "--aur")    == 0 ||
+        strcmp(argv[1], "--aur-nc") == 0
+    ){
+        AdvancedCopy(argc, argv);
+    }
+
     while (index < argc)
     {
         if (!strcmp(argv[index], "--d")) detached = true;
@@ -27,7 +36,7 @@ int main(int argc, char** argv)
 
     if (detached || keepfile)
     {
-        argparse(argc, argv);
+        ArgParse(argc, argv);
         return 0;
     }
 
