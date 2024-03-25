@@ -1,5 +1,5 @@
 // main.c
-#include "common.h"
+#include "common_legacy.h"
 
 #include <stdio.h>
 #include <stdlib.h>
