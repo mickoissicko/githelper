@@ -97,7 +97,7 @@ void RegularExecution()
     char Ui;
 
     printf("loading...\n");
-    commit();
+    Commit();
 }
 
 void StageTwo()
