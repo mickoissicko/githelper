@@ -6,7 +6,7 @@
 
 using namespace std;
 
-void commit()
+void Commit()
 {
     char buf_1[MAX_LEN];
     char buf_2[MAX_LEN];
