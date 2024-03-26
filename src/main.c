@@ -25,7 +25,7 @@ int main(int argc, char** argv)
         strcmp(argv[1], "--aur")    == 0 ||
         strcmp(argv[1], "--aur-nc") == 0
     ){
-        AdvancedCopy(argc, argv);
+        GitClone(argc, argv);
     }
 
     else if (
@@ -40,7 +40,7 @@ int main(int argc, char** argv)
         strcmp(argv[1], "--daur-ng") == 0 ||
         strcmp(argv[1], "--daur")    == 0
     ){
-        DirectAUR(argc, argv);
+        AurHelper(argc, argv);
     }
 
     else if (
