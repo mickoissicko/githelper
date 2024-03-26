@@ -62,7 +62,7 @@ int DirectAUR(int argc, char** argv)
         DeleteTemp();
     }
 
-    else if (strcmp(argv[1], "--daur-nc"))
+    if (strcmp(argv[1], "--daur-nc"))
     {
         strcpy(Soft, argv[2]);
         CreateTemp();
@@ -103,7 +103,7 @@ int DirectAUR(int argc, char** argv)
         }
     }
 
-    else if (strcmp(argv[1], "--daur-ng") == 0)
+    if (strcmp(argv[1], "--daur-ng") == 0)
     {
         strcpy(Soft, argv[2]);
         CreateTemp();
@@ -145,7 +145,7 @@ int DirectAUR(int argc, char** argv)
         DeleteTemp();
     }
 
-    else if (strcmp(argv[1], "--daur-ng-nc"))
+    if (strcmp(argv[1], "--daur-ng-nc"))
     {
         strcpy(Soft, argv[2]);
         CreateTemp();
