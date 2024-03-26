@@ -15,6 +15,7 @@ int ArgParse(int argc, char* argv[]);
 
 void RegularExecution();
 void PromptForPush();
+void RemoveConfig();
 void DeleteTemp();
 void CreateTemp();
 void StageTwo();
