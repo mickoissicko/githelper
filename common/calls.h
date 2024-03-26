@@ -6,11 +6,11 @@
 #include <stdbool.h>
 
 void VerifyArguments(int argc, char* argv[]);
-int AdvancedCopy(int argc, char* argv[]);
 int DirectCopy(int argc, char* argv[]);
 int QuickStart(int argc, char* argv[]);
 int Configger(int argc, char* argv[]);
-int DirectAUR(int argc, char* argv[]);
+int AurHelper(int argc, char* argv[]);
+int GitClone(int argc, char* argv[]);
 int ArgParse(int argc, char* argv[]);
 
 void RegularExecution();
