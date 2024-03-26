@@ -19,3 +19,6 @@ void DeleteTemp();
 void CreateTemp();
 void StageTwo();
 void Commit();
+
+char* Posix_Path();
+char* Win32_Path();
