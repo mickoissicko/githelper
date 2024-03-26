@@ -1,3 +1,5 @@
+#include <stdlib.h>
+
 void CreateTemp()
 {
     system("mkdir ~/aur.gelper_tmp");
