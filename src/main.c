@@ -49,6 +49,20 @@ int main(int argc, char** argv)
         Configger(argc, argv);
     }
 
+    else if (
+        strcmp(argv[1], "--reset") == 0
+    ){
+        RemoveConfig();
+        return 0;
+    }
+
+    else if (
+        strcmp(argv[1], "--clean") ==0
+    ){
+        DeleteTemp();
+        return 0;
+    }
+
     while (index < argc)
     {
         if (!strcmp(argv[index], "--d")) detached = true;
