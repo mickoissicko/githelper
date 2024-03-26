@@ -1,5 +1,5 @@
-#include "../common/consts.h"
-#include "../common/calls.h"
+#include "../../common/consts.h"
+#include "../../common/calls.h"
 
 #include <stdlib.h>
 #include <string.h>
