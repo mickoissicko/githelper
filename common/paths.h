@@ -2,7 +2,7 @@
     #define PATHS_H
 #endif
 
-const static char POSIX_TempDIR[] = "/tmp";
+const static char _PosixTemp[] = "/tmp";
 
-// coming later:
-//const static char WIN32_TempDIR[] = "\%temp";
+// Coming soon
+//const static char _Win32_Tmp[] = "\%temp";
