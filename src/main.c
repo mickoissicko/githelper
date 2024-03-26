@@ -1,16 +1,11 @@
 // main.c
 #include "../common/calls.h"
 
-#include <stdio.h>
 #include <string.h>
 
 int main(int argc, char** argv)
 {
-    if (argc < 2)
-    {
-        printf("No arguments supplied?\n");
-        return 1;
-    }
+    VerifyArguments(argc, argv);
 
     int index = 1;
 
@@ -39,6 +34,13 @@ int main(int argc, char** argv)
     ){
         DirectCopy(argc, argv);
         return 0;
+    }
+
+    else if (
+        strcmp(argv[1], "--daur-ng") == 0 ||
+        strcmp(argv[1], "--daur")    == 0
+    ){
+        DirectAUR(argc, argv);
     }
 
     while (index < argc)
