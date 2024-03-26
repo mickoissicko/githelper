@@ -1,4 +1,4 @@
-![](templates/res/gelper.png)
+![](assets/gelper.png)
 <p align="center">
     <em>"it's pronounced gelper and not jelqer!"</em>
 </p>
