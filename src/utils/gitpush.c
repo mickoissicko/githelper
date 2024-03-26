@@ -17,10 +17,10 @@ void PromptForPush()
         case 'Y':
         case 'y':
             system("git push");
-            break;
+        break;
 
         case 'N':
         case 'n':
-            break;
+        break;
     }
 }
