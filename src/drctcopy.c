@@ -15,15 +15,15 @@ int DirectCopy(int argc, char** argv)
     {
         strcpy(Address, argv[2]);
 
-        snprintf(FormattedLink, LEN, "git clone %s%s", Adr, Address);
+        snprintf(FormattedLink, LEN, "git clone %s%s.git", Adr, Address);
         system(FormattedLink);
     }
 
-    else if (strcmp(argv[1], "--dcg") == 0)
+    else if (strcmp(argv[1], "--dc-ng") == 0)
     {
         strcpy(Address, argv[2]);
 
-        snprintf(FormattedLink, LEN, "git clone %s%s.git", Adr, Address);
+        snprintf(FormattedLink, LEN, "git clone %s%s", Adr, Address);
         system(FormattedLink);
     }
 
