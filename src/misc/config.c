@@ -2,7 +2,7 @@
 
 #include <stdio.h>
 
-int main(int argc, char** argv)
+int Configger(int argc, char** argv)
 {
    char *Path;
 
@@ -13,4 +13,6 @@ int main(int argc, char** argv)
    #endif
 
    printf("%s\n", Path);
+
+   return 0;
 }
