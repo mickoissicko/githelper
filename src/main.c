@@ -43,6 +43,12 @@ int main(int argc, char** argv)
         DirectAUR(argc, argv);
     }
 
+    else if (
+        strcmp(argv[1], "--global-user") == 0
+    ){
+        Configger(argc, argv);
+    }
+
     while (index < argc)
     {
         if (!strcmp(argv[index], "--d")) detached = true;
