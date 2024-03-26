@@ -4,7 +4,6 @@
 #include <filesystem> // i like modern C++
 #include <iostream>
 #include <fstream>
-#include <cstring>
 #include <string>
 
 namespace fs = std::filesystem;
