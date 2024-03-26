@@ -52,11 +52,11 @@ int AurHelper(int argc, char** argv)
                 case 'y':
                 case 'Y':
                     system(FormattedCheck);
-                    break;
+                break;
 
                 case 'N':
                 case 'n':
-                    break;
+                break;
             }
         }
         DeleteTemp();
@@ -94,11 +94,11 @@ int AurHelper(int argc, char** argv)
                 case 'y':
                 case 'Y':
                     system(FormattedCheck);
-                    break;
+                break;
 
                 case 'N':
                 case 'n':
-                    break;
+                break;
             }
         }
     }
@@ -135,11 +135,11 @@ int AurHelper(int argc, char** argv)
                 case 'y':
                 case 'Y':
                     system(FormattedCheck);
-                    break;
+                break;
 
                 case 'N':
                 case 'n':
-                    break;
+                break;
             }
         }
         DeleteTemp();
@@ -177,11 +177,11 @@ int AurHelper(int argc, char** argv)
                 case 'y':
                 case 'Y':
                     system(FormattedCheck);
-                    break;
+                break;
 
                 case 'N':
                 case 'n':
-                    break;
+                break;
             }
         }
     }
@@ -221,11 +221,11 @@ int AurHelper(int argc, char** argv)
                 case 'y':
                 case 'Y':
                     system(FormattedCheck);
-                    break;
+                break;
 
                 case 'N':
                 case 'n':
-                    break;
+                break;
             }
         }
 
@@ -269,11 +269,11 @@ int AurHelper(int argc, char** argv)
                 case 'y':
                 case 'Y':
                     system(FormattedCheck);
-                    break;
+                break;
 
                 case 'N':
                 case 'n':
-                    break;
+                break;
             }
         }
     }
