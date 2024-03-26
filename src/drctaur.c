@@ -59,6 +59,49 @@ int DirectAUR(int argc, char** argv)
                     break;
             }
         }
+        DeleteTemp();
     }
+
+    else if (strcmp(argv[1], "--daur-nc"))
+    {
+        strcpy(Soft, argv[2]);
+        CreateTemp();
+        snprintf(FormattedCheck, LEN, "cd ~/aur.gelper_tmp/%s", Soft);
+
+        Status = system(FormattedCheck);
+
+        if (Status != 0)
+        {
+            snprintf(FormattedRepoAddr, LEN, "git clone %s%s", Aur, Soft);
+            snprintf(FormattedCommand, LEN, "cd ~/aur.gelper_tmp && %s", FormattedRepoAddr);
+            snprintf(FormattedCdCommand, LEN, "cd ~/aur.gelper_tmp/%s && makepkg -si", Soft);
+
+            system(FormattedCommand);
+            system(FormattedCdCommand);
+        }
+
+        else
+        {
+            snprintf(FormattedCheck, LEN, "cd ~/aur.gelper_tmp/%s && makepkg -si", Soft);
+
+            while (Ui != 'Y' && Ui != 'y' && Ui != 'N' && Ui != 'n')
+            {
+                printf("Software repository found! Build? [y/n]: ");
+                scanf(" %c", &Ui);
+            }
+            switch (Ui)
+            {
+                case 'y':
+                case 'Y':
+                    system(FormattedCheck);
+                    break;
+
+                case 'N':
+                case 'n':
+                    break;
+            }
+        }
+    }
+
     return 0;
 }
