@@ -32,7 +32,7 @@ int main(int argc, char** argv)
         strcmp(argv[1], "--dc")  == 0 ||
         strcmp(argv[1], "--dcg") == 0
     ){
-        DirectCopy(argc, argv);
+        GitClone(argc, argv);
         return 0;
     }
 
