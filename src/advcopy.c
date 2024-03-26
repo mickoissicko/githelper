@@ -16,18 +16,13 @@ int AdvancedCopy(int argc, char** argv)
 
     unsigned long LEN = MAX_STR_LEN;
 
-    char FormattedCDCommand[MAX_STR_LEN];
+    char FormattedCdCommand[MAX_STR_LEN];
     char FormattedRepoAddr[MAX_STR_LEN];
     char FormattedCommand[MAX_STR_LEN];
     char FormattedCheck[MAX_STR_LEN];
     char Repo[MAX_LEN];
     char User[MAX_LEN];
     char Soft[MAX_LEN];
-
-    if (argc < 2)
-    {
-        return 1;
-    }
 
     if (strcmp(argv[1], "--c") == 0)
     {
@@ -66,10 +61,10 @@ int AdvancedCopy(int argc, char** argv)
 
         snprintf(FormattedRepoAddr, LEN, "git clone %s%s.git", Aur, Soft);
         snprintf(FormattedCommand, LEN, "cd ~/aur.gelper_tmp && %s", FormattedRepoAddr);
-        snprintf(FormattedCDCommand, LEN, "cd ~/aur.gelper_tmp/%s && makepkg -si", Soft);
+        snprintf(FormattedCdCommand, LEN, "cd ~/aur.gelper_tmp/%s && makepkg -si", Soft);
 
         system(FormattedCommand);
-        system(FormattedCDCommand);
+        system(FormattedCdCommand);
 
         DeleteTemp();
 
@@ -91,10 +86,10 @@ int AdvancedCopy(int argc, char** argv)
         {
             snprintf(FormattedRepoAddr, LEN, "git clone %s%s", Aur, Soft);
             snprintf(FormattedCommand, LEN, "cd ~/aur.gelper_tmp && %s", FormattedRepoAddr);
-            snprintf(FormattedCDCommand, LEN, "cd ~/aur.gelper_tmp/%s && makepkg -si", Soft);
+            snprintf(FormattedCdCommand, LEN, "cd ~/aur.gelper_tmp/%s && makepkg -si", Soft);
 
             system(FormattedCommand);
-            system(FormattedCDCommand);
+            system(FormattedCdCommand);
         }
 
         else
