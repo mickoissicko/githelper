@@ -31,10 +31,12 @@ void VerifyArguments(int argc, char** argv)
     }
 
     else if (
-        strcmp(argv[1], "--dc")      == 0 ||
-        strcmp(argv[1], "--dcg")     == 0 ||
-        strcmp(argv[1], "--daur")    == 0 ||
-        strcmp(argv[1], "--daur-ng") == 0
+        strcmp(argv[1], "--dc")         == 0 ||
+        strcmp(argv[1], "--dcg")        == 0 ||
+        strcmp(argv[1], "--daur")       == 0 ||
+        strcmp(argv[1], "--daur-ng")    == 0 ||
+        strcmp(argv[1], "--daur-nc")    == 0 ||
+        strcmp(argv[1], "--daur-ng-nc") == 0
     ){ 
         if (argc < 3)
         {
