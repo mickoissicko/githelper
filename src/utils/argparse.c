@@ -60,7 +60,7 @@ int ArgParse(int argc, char** argv)
                             remove(Com);
                             remove(Add);
                         }
-                        break;
+                    break;
 
                     case 'N':
                     case 'n':
@@ -70,7 +70,7 @@ int ArgParse(int argc, char** argv)
                             remove(Com);
                             remove(Add);
                         }
-                        break;
+                    break;
                 }
             }
         }
