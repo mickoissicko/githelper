@@ -27,6 +27,7 @@ int main(int argc, char** argv)
         strcmp(argv[1], "--aur-nc") == 0
     ){
         GitClone(argc, argv);
+        return 0;
     }
 
     else if (
@@ -42,12 +43,14 @@ int main(int argc, char** argv)
         strcmp(argv[1], "--daur")    == 0
     ){
         AurHelper(argc, argv);
+        return 0;
     }
 
     else if (
         strcmp(argv[1], "--global-user") == 0
     ){
         Configger(argc, argv);
+        return 0;
     }
 
     else if (
@@ -68,6 +71,7 @@ int main(int argc, char** argv)
         strcmp(argv[1], "--m") == 0
     ){
         Multistart(argc, argv);
+        return 0;
     }
 
     while (index < argc)
