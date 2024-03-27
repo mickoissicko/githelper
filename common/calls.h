@@ -6,7 +6,7 @@
 #include <stdbool.h>
 
 void VerifyArguments(int argc, char* argv[]);
-int Multistart(int argc, char* argv[]);
+int MultiStart(int argc, char* argv[]);
 int QuickStart(int argc, char* argv[]);
 int Configger(int argc, char* argv[]);
 int AurHelper(int argc, char* argv[]);
