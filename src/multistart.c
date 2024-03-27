@@ -27,7 +27,7 @@ int MultiStart(int argc, char* argv[])
                 if (strcmp(RelationDivider, argv[i]) == 0) break;
 
                 snprintf(SystemFormattedAdd, LEN, "git add \"%s\"", argv[i]);
-                printf("%s\n", SystemFormattedAdd);
+                system(SystemFormattedAdd);
 
                 ++i;
             }
@@ -42,7 +42,7 @@ int MultiStart(int argc, char* argv[])
                 while (i < argc)
                 {
                     snprintf(SystemFormattedMessage, LEN, "git commit -m \"%s\"", argv[i]);
-                    printf("%s\n",SystemFormattedMessage);
+                    system(SystemFormattedMessage);
 
                     ++i;
                 }
