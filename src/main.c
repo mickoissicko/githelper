@@ -13,8 +13,9 @@ int main(int argc, char** argv)
     bool detached = false;
     bool filenull = false;
 
-    if (strcmp(argv[1], "--q") == 0)
-    {
+    if (
+        strcmp(argv[1], "--q") == 0
+    ){
         QuickStart(argc, argv);
         return 0;
     }
@@ -57,10 +58,16 @@ int main(int argc, char** argv)
     }
 
     else if (
-        strcmp(argv[1], "--clean") ==0
+        strcmp(argv[1], "--clean") == 0
     ){
         DeleteTemp();
         return 0;
+    }
+
+    else if (
+        strcmp(argv[1], "--m") == 0
+    ){
+        Multistart(argc, argv);
     }
 
     while (index < argc)
