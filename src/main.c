@@ -70,7 +70,7 @@ int main(int argc, char** argv)
     else if (
         strcmp(argv[1], "--m") == 0
     ){
-        Multistart(argc, argv);
+        MultiStart(argc, argv);
         return 0;
     }
 
