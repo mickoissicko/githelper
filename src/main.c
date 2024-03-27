@@ -1,6 +1,7 @@
 // main.c
 #include "../common/calls.h"
 
+#include <stdlib.h>
 #include <string.h>
 
 int main(int argc, char** argv)
@@ -71,6 +72,11 @@ int main(int argc, char** argv)
         strcmp(argv[1], "--m") == 0
     ){
         MultiStart(argc, argv);
+
+        for (int i = 1; i < argc; i++)
+            if (strcmp(argv[i], "!push") == 0)
+                system("git push");
+
         return 0;
     }
 
