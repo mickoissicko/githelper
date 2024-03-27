@@ -1,13 +1,19 @@
 #include "../../common/consts.h"
 
-#include <stdio.h>
 #include <stdlib.h>
+#include <stdio.h>
+#include <string.h>
 
 char* Win32_Path()
 {
-    char *Home;
+    unsigned long LEN = MAX_PATH_LEN;
 
-    snprintf(Home, MAX_PATH_LEN, "%s%s", getenv("HOMEDRIVE"), getenv("HOMEPATH"));
+    char Home[MAX_PATH_LEN];
 
-    return Home;
+    char* HomeDrive = getenv("HOMEDRIVE");
+    char* HomePath = getenv("HOMEPATH");
+
+    strcat(HomeDrive, HomePath);
+
+    return HomeDrive;
 }
