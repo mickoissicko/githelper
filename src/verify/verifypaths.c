@@ -17,7 +17,7 @@ bool VerifyPath()
     bool FileExists;
 
     #ifdef _WIN32
-        Path = Win32_Path()
+        Path = Win32_Path();
     #else
         Path = Posix_Path();
     #endif
