@@ -10,11 +10,11 @@ char* Posix_Path()
 {
     struct passwd *Home;
 
-    char *Path = NULL;
+    char* Path = NULL;
 
     if ((Home = getpwuid(getuid())) != NULL)
     {
-        Path = (char *)malloc(MAX_STR_LEN);
+        Path = (char*)malloc(MAX_STR_LEN);
 
         if (Path != NULL)
         {
