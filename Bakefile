@@ -2,7 +2,7 @@
 
 out: [../bin/out];
 run: [cd src/ && g++];
-src: [clone/aur_helper.c clone/git_clone.c misc/config.cpp misc/posix_path.c misc/win32_path.c verify/verifyargs.c utils/argparse.c utils/gitpush.c utils/getusername.c verify/verifypaths.c filemanager.c quickstart.c commit.cpp main.c multistart.c];
+src: [clone/aur_helper.c clone/fresh_clone.c clone/git_clone.c misc/config.cpp misc/posix_path.c misc/win32_path.c verify/verifyargs.c utils/argparse.c utils/gitpush.c utils/getusername.c verify/verifypaths.c filemanager.c quickstart.c commit.cpp main.c multistart.c];
 
 !main{
     >[run] -o [out] [src];
