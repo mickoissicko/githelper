@@ -13,9 +13,14 @@ void DeleteTemp()
     system("rm -rf ~/aur.gelper_tmp");
 }
 
+#define MAX_LEN 4096
+
 void RemoveConfig()
 {
+    unsigned long LEN = MAX_LEN;
+
     char* Path;
+    char* FinalStr;
 
     #ifdef _WIN32
        Path = Win32_Path();
@@ -23,5 +28,7 @@ void RemoveConfig()
        Path = Posix_Path();
     #endif
 
-    remove(Path);
+    snprintf(FinalStr, LEN, "%s/.gelper/config.txt", Path);
+
+    remove(FinalStr);
 }
