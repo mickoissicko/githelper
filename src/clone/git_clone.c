@@ -12,11 +12,8 @@
 int GitClone(int argc, char** argv)
 {
     bool FileExists;
-
     char* f_User; // file user
-
     char Ui;
-    int Status;
 
     unsigned long LEN = MAX_STR_LEN;
 
@@ -69,7 +66,7 @@ int GitClone(int argc, char** argv)
 
             snprintf(FormattedCloneCommand, LEN, "%s/%s.git", FormattedLink, Repo);
 
-            printf("%s\n", FormattedCloneCommand);
+            system(FormattedCloneCommand);
 
             return 0;
         }
@@ -82,7 +79,25 @@ int GitClone(int argc, char** argv)
 
     else if (strcmp(argv[1], "--dc-ng") == 0)
     {
-        strcpy(User, argv[2]);
+        FileExists = VerifyPath();
+
+        if (FileExists)
+        {
+            f_User = GetUsername();
+
+            strcpy(Repo, argv[2]);
+            snprintf(FormattedLink, LEN, "git clone %s%s%s", Adr, f_User, Repo);
+
+            FormattedLink[strcspn(FormattedLink, "\n")] = '\0';
+
+            snprintf(FormattedCloneCommand, LEN, "%s/%s", FormattedLink, Repo);
+
+            system(FormattedCloneCommand);
+
+            return 0;
+        }
+
+        else strcpy(User, argv[2]);
 
         snprintf(FormattedLink, LEN, "git clone %s%s", Adr, User);
         system(FormattedLink);
