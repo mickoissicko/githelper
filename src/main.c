@@ -74,6 +74,16 @@ int main(int argc, char** argv)
     }
 
     else if (
+        strcmp(argv[1], "--ccgp") == 0 ||
+        strcmp(argv[1], "--ccga") == 0 ||
+        strcmp(argv[1], "--cgp")  == 0 ||
+        strcmp(argv[1], "--cga")  == 0
+    ){
+        SpecialClone(argc, argv);
+        return 0;
+    }
+
+    else if (
         strcmp(argv[1], "--m") == 0
     ){
         MultiStart(argc, argv);
