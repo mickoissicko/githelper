@@ -31,13 +31,13 @@ int GitClone(int argc, char** argv)
         printf("Repository: ");
         scanf(" %s", Repo);
 
-        snprintf(FormattedRepoAddr, LEN, "git clone %s%s/%s", Adr, User, Repo);
+        snprintf(FormattedRepoAddr, LEN, "git clone %s%s/%s.git", Adr, User, Repo);
         system(FormattedRepoAddr);
 
         return 0;
     }
 
-    else if (strcmp(argv[1], "--cg") == 0)
+    else if (strcmp(argv[1], "--c-ng") == 0)
     {
         printf("Username: ");
         scanf("%s", User);
@@ -45,7 +45,7 @@ int GitClone(int argc, char** argv)
         printf("Repository: ");
         scanf(" %s", Repo);
 
-        snprintf(FormattedRepoAddr, LEN, "git clone %s%s/%s.git", Adr, User, Repo);
+        snprintf(FormattedRepoAddr, LEN, "git clone %s%s/%s", Adr, User, Repo);
         system(FormattedRepoAddr);
 
         return 0;
