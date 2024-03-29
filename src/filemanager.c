@@ -2,6 +2,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <unistd.h>
 
 void CreateTemp()
 {
@@ -19,16 +20,27 @@ void RemoveConfig()
 {
     unsigned long LEN = MAX_LEN;
 
+    char GelperFolderPath[MAX_LEN];
+    char ConfigFilePath[MAX_LEN];
+
     char* Path;
-    char* FinalStr;
 
     #ifdef _WIN32
-       Path = Win32_Path();
+        Path = Win32_Path();
     #else
-       Path = Posix_Path();
+        Path = Posix_Path();
     #endif
 
-    snprintf(FinalStr, LEN, "%s/.gelper/config.txt", Path);
-
-    remove(FinalStr);
+    // NOTE TO FUTURE ME:
+    // YOU ALMOST ERASED YOUR HOME/ DIR
+    //
+    // POTENTIALLY DESTRUCTIVE FUNCTION BELOW (IF TOUCHED)
+    // DO NOT CHANGE, EVER
+    //
+    snprintf(ConfigFilePath, LEN, "%s/.gelper/config.txt", Path);
+    snprintf(GelperFolderPath, LEN, "%s/.gelper", Path);
+    remove(ConfigFilePath);
+    rmdir(GelperFolderPath);
+    //
+    // DO NOT TOUCH COMMANDS
 }
