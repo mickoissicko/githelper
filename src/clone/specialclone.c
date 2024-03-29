@@ -82,7 +82,7 @@ int SpecialClone(int argc, char** argv)
             strcpy(Address, argv[2]);
 
             snprintf(FormattedCloneCommand, LEN, "git clone %s%s/%s", Adr, Address, Address);
-            puts(FormattedCloneCommand);
+            system(FormattedCloneCommand);
 
             return 0;
         }
@@ -92,7 +92,7 @@ int SpecialClone(int argc, char** argv)
             strcpy(Address, argv[2]);
 
             snprintf(FormattedCloneCommand, LEN, "git clone %s%s/%s%s", Adr, Address, Address, Pgs);
-            puts(FormattedCloneCommand);
+            system(FormattedCloneCommand);
 
             return 0;
         }
