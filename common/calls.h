@@ -13,6 +13,8 @@ int AurHelper(int argc, char* argv[]);
 int GitClone(int argc, char* argv[]);
 int ArgParse(int argc, char* argv[]);
 
+bool VerifyPath();
+
 void RegularExecution();
 void PromptForPush();
 void RemoveConfig();
@@ -23,3 +25,5 @@ void Commit();
 
 char* Posix_Path();
 char* Win32_Path();
+char* GetUsername();
+
