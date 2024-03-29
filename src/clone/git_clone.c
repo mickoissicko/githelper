@@ -74,8 +74,7 @@ int GitClone(int argc, char** argv)
             return 0;
         }
 
-        else
-            strcpy(User, argv[2]);
+        else strcpy(User, argv[2]);
 
         snprintf(FormattedLink, LEN, "git clone %s%s.git", Adr, User);
         system(FormattedLink);
