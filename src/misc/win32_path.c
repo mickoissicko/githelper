@@ -7,8 +7,6 @@ char* Win32_Path()
 {
     unsigned long LEN = MAX_PATH_LEN;
 
-    char Home[MAX_PATH_LEN];
-
     char* HomeDrive = getenv("HOMEDRIVE");
     char* HomePath = getenv("HOMEPATH");
 
