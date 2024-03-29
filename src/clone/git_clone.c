@@ -16,16 +16,13 @@ int GitClone(int argc, char** argv)
 
     unsigned long LEN = MAX_STR_LEN;
 
-
     char FormattedCdCommand[MAX_STR_LEN];
     char FormattedRepoAddr[MAX_STR_LEN];
     char FormattedCommand[MAX_STR_LEN];
     char FormattedCheck[MAX_STR_LEN];
     char FormattedLink[MAX_STR_LEN];
-    char Address[MAX_LEN];
-    char Repo[MAX_LEN];
     char User[MAX_LEN];
-    char Soft[MAX_LEN];
+    char Repo[MAX_LEN];
 
     if (strcmp(argv[1], "--c") == 0)
     {
@@ -57,17 +54,17 @@ int GitClone(int argc, char** argv)
 
     if (strcmp(argv[1], "--dc") == 0)
     {
-        strcpy(Address, argv[2]);
+        strcpy(User, argv[2]);
 
-        snprintf(FormattedLink, LEN, "git clone %s%s.git", Adr, Address);
+        snprintf(FormattedLink, LEN, "git clone %s%s.git", Adr, User);
         system(FormattedLink);
     }
 
     else if (strcmp(argv[1], "--dc-ng") == 0)
     {
-        strcpy(Address, argv[2]);
+        strcpy(User, argv[2]);
 
-        snprintf(FormattedLink, LEN, "git clone %s%s", Adr, Address);
+        snprintf(FormattedLink, LEN, "git clone %s%s", Adr, User);
         system(FormattedLink);
     }
 
