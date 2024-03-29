@@ -1,5 +1,6 @@
 #include "../../common/calls.h"
 
+#include <string.h>
 #include <stdlib.h>
 #include <stdio.h>
 
@@ -20,21 +21,23 @@ char* GetUsername()
 
     #ifdef _WIN32
         Path = Win32_Path();
+        snprintf(FormattedPath, LEN, "%s\\.gelper\\config.txt", Path);
     #else
         Path = Posix_Path();
+        snprintf(FormattedPath, LEN, "%s/.gelper/config.txt", Path);
     #endif
 
-    snprintf(FormattedPath, LEN, "%s/.gelper/config.txt", Path);
+    printf("%s\n", FormattedPath);
 
     GelperCfg = fopen(FormattedPath, "r");
 
     if (GelperCfg == NULL)
     {
-        printf("Error opening file\n");
+        perror("Error opening file\n");
         exit(1);
     }
 
-    getline(&Username, &LEN, GelperCfg);
+    fgets(Username, LEN, GelperCfg);
     fclose(GelperCfg); 
 
     return Username;
