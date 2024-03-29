@@ -10,6 +10,7 @@
 #define MIN_ARG 5
 
 // Strings
+const static char Pgs[] = ".github.io";
 const static char Adr[] = "https://github.com/";
 const static char Aur[] = "https://aur.archlinux.org/";
 const static char Add[] = "addfiles";
