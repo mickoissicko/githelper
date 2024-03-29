@@ -39,6 +39,7 @@ void RemoveConfig()
     //
     snprintf(ConfigFilePath, LEN, "%s/.gelper/config.txt", Path);
     snprintf(GelperFolderPath, LEN, "%s/.gelper", Path);
+    //
     remove(ConfigFilePath);
     rmdir(GelperFolderPath);
     //
