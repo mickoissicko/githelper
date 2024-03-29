@@ -27,8 +27,6 @@ char* GetUsername()
         snprintf(FormattedPath, LEN, "%s/.gelper/config.txt", Path);
     #endif
 
-    printf("%s\n", FormattedPath);
-
     GelperCfg = fopen(FormattedPath, "r");
 
     if (GelperCfg == NULL)
