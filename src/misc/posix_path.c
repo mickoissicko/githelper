@@ -1,26 +1,28 @@
 #include "../../common/consts.h"
 
-#include <sys/types.h>
-#include <unistd.h>
-#include <string.h>
-#include <stdlib.h>
-#include <pwd.h>
+#ifndef _WIN32
+    #include <sys/types.h>
+    #include <unistd.h>
+    #include <string.h>
+    #include <stdlib.h>
+    #include <pwd.h>
 
-char* Posix_Path()
-{
-    struct passwd *Home;
-
-    char* Path = NULL;
-
-    if ((Home = getpwuid(getuid())) != NULL)
+    char* Posix_Path()
     {
-        Path = (char*)malloc(MAX_STR_LEN);
+        struct passwd *Home;
 
-        if (Path != NULL)
+        char* Path = NULL;
+
+        if ((Home = getpwuid(getuid())) != NULL)
         {
-            strcpy(Path, Home->pw_dir);
-        }
-    }
+            Path = (char*)malloc(MAX_STR_LEN);
 
-    return Path;
-}
+            if (Path != NULL)
+            {
+                strcpy(Path, Home->pw_dir);
+            }
+        }
+
+        return Path;
+    }
+#endif
