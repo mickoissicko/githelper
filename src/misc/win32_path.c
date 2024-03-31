@@ -1,7 +1,6 @@
 #include "../../common/consts.h"
 
 #include <stdlib.h>
-#include <string.h>
 
 char* Win32_Path()
 {
