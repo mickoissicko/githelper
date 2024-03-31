@@ -6,6 +6,7 @@
 #include <stdbool.h>
 
 void VerifyArguments(int argc, char* argv[]);
+void PullAndRebase(int argc, char* argv[]);
 int SpecialClone(int argc, char** argv);
 int FreshClone(int argc, char* argv[]);
 int MultiStart(int argc, char* argv[]);
