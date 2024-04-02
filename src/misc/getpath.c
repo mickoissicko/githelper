@@ -1,10 +1,11 @@
 #include "../../common/consts.h"
 
+#include <unistd.h>
+#include <string.h>
+#include <stdlib.h>
+
 #ifndef _WIN32
     #include <sys/types.h>
-    #include <unistd.h>
-    #include <string.h>
-    #include <stdlib.h>
     #include <pwd.h>
 
     char* Posix_Path()
@@ -24,5 +25,14 @@
         }
 
         return Path;
+    }
+#else
+    char* Win32_Path()
+    {
+        unsigned long LEN = MAX_PATH_LEN;
+
+        char* HomeDirectory = getenv("USERPROFILE");
+
+        return HomeDirectory;
     }
 #endif
