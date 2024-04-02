@@ -3,6 +3,8 @@
     <em>"it's pronounced gelper and not jelqer!"</em>
 </p>
 
+### 1,328 lines of code!
+
 # Gelper
 Gelper, or Git Helper is a cool tool if you do not want to use the default Git system for committing. In my opinion, I think Git's default system is pretty slow.
 
