@@ -23,6 +23,7 @@ void Help()
     printf("[--f] pull and rebase\n");
     printf("[--m] specify more than 1 file and commit a single message for them\n");
     printf("[!push] can be added after (--m,--q,etc.) to push immediately after it adds/commits\n");
+    printf("[list-flags] displays this prompt\n");
     printf("[/?] displays this prompt\n");
     printf("NOTE: please read the official wiki for more info at https://mick.gdn/wiki/githelper!\n");
 }
