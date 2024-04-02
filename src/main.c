@@ -104,7 +104,8 @@ int main(int argc, char** argv)
     }
 
     else if (
-        strcmp(argv[1], "/?") == 0
+        strcmp(argv[1], "list-flags") == 0 ||
+        strcmp(argv[1], "/?")         == 0 
     ){
         Help();
         return 0;
