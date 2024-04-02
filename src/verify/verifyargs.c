@@ -18,6 +18,7 @@ void VerifyArguments(int argc, char** argv)
     if (argc < 2)
     {
         printf("Missing flags; type '/?' for a list of flags.");
+        printf("Use 'list-flags' if you use the FISH shell\n");
         exit(1);
     }
 
@@ -26,6 +27,7 @@ void VerifyArguments(int argc, char** argv)
         if (argc < 5)
         {
             printf("Insufficient arguments; type '/?' for a list of flags\n");
+            printf("Use 'list-flags' if you use the FISH shell\n");
             exit(1);
         }
     }
@@ -41,6 +43,7 @@ void VerifyArguments(int argc, char** argv)
         if (argc < 3)
         {
             printf("Insufficient arguments!\n");
+            printf("See the wiki for correct usage\n");
             exit(1);
         }
     }
