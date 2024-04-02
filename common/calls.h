@@ -26,6 +26,7 @@ void DeleteTemp();
 void CreateTemp();
 void StageTwo();
 void Commit();
+void Help();
 
 char* Posix_Path();
 char* Win32_Path();
