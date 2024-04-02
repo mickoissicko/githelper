@@ -15,7 +15,7 @@ void Help()
     printf("[--fc(-ng)] directly clone repository without config\n");
     printf("[--global-user] sets a user so '--dc' automatically clones a repository from that user\n");
     printf("    i.e. gelper --global-user github_username");
-    printf("    this also makes it so that you don't have to specify your user everytime you clone a repository\n");
+    printf("    this also makes it so that you don't have to specify your user when you clone a repository\n");
     printf("[--reset] removes the user\n");
     printf("[--clean] deletes AUR temp folder\n");
     printf("[--(c)cga] clones the (user's) about-me (if they have one)\n");
