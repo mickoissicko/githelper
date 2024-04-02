@@ -103,6 +103,13 @@ int main(int argc, char** argv)
         return 0;
     }
 
+    else if (
+        strcmp(argv[1], "/?") == 0
+    ){
+        Help();
+        return 0;
+    }
+
     while (index < argc)
     {
         if (!strcmp(argv[index], "--d")) detached = true;
@@ -119,3 +126,4 @@ int main(int argc, char** argv)
 
     return 0;
 }
+
