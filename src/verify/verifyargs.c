@@ -17,7 +17,7 @@ void VerifyArguments(int argc, char** argv)
 {
     if (argc < 2)
     {
-        printf("No argument?");
+        printf("Missing flags; type '/?' for a list of flags.");
         exit(1);
     }
 
@@ -25,7 +25,7 @@ void VerifyArguments(int argc, char** argv)
     {
         if (argc < 5)
         {
-            printf("Insufficient arguments\n");
+            printf("Insufficient arguments; type '/?' for a list of flags\n");
             exit(1);
         }
     }
