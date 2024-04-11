@@ -32,20 +32,6 @@ int main(int argc, char** argv)
     }
 
     else if (
-        strcmp(argv[1], "--aur")        == 0 ||
-        strcmp(argv[1], "--aur-nc")     == 0 ||
-        strcmp(argv[1], "--aur-ng")     == 0 ||
-        strcmp(argv[1], "--aur-ng-nc")  == 0 ||
-        strcmp(argv[1], "--daur-ng")    == 0 ||
-        strcmp(argv[1], "--daur-ng-nc") == 0 ||
-        strcmp(argv[1], "--daur-nc")    == 0 ||
-        strcmp(argv[1], "--daur")       == 0
-    ){
-        AurHelper(argc, argv);
-        return 0;
-    }
-
-    else if (
         strcmp(argv[1], "--fc-ng") == 0 ||
         strcmp(argv[1], "--fc")    == 0
     ){
