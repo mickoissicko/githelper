@@ -11,7 +11,6 @@ void Help()
     printf("[--dc] directly clone a repository\n");
     printf("[--c] clone a repository without using config\n");
     printf("[-ng] can be appended after above 2 flags to clone without '.git'\n");
-    printf("[--(d)aur(-ng)] [-nc] are flags to start aur helper, see wiki\n");
     printf("[--fc(-ng)] directly clone repository without config\n");
     printf("[--global-user] sets a user so '--dc' automatically clones a repository from that user\n");
     printf("    i.e. gelper --global-user github_username");
