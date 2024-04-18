@@ -26,8 +26,8 @@ int Configger(int argc, char** argv)
 
     HomeDirectory = Path;
 
-    ConfigFile = HomeDirectory + "/.gelper/config.txt";
-    ConfigPath = HomeDirectory + "/.gelper/";
+    ConfigFile = HomeDirectory + "/.mix/gelper/config.txt";
+    ConfigPath = HomeDirectory + "/.mix/gelper/";
 
     fs::create_directory(ConfigPath);
 
@@ -56,3 +56,4 @@ int Configger(int argc, char** argv)
 
     return 0;
 }
+
