@@ -1,18 +1,7 @@
 #include "../common/calls.h"
 
 #include <stdio.h>
-#include <stdlib.h>
 #include <unistd.h>
-
-void CreateTemp()
-{
-    system("mkdir ~/aur.gelper_tmp");
-}
-
-void DeleteTemp()
-{
-    system("rm -rf ~/aur.gelper_tmp");
-}
 
 #define MAX_LEN 4096
 
@@ -37,8 +26,8 @@ void RemoveConfig()
     // POTENTIALLY DESTRUCTIVE FUNCTION BELOW (IF TOUCHED)
     // DO NOT CHANGE, EVER
     //
-    snprintf(ConfigFilePath, LEN, "%s/.gelper/config.txt", Path);
-    snprintf(GelperFolderPath, LEN, "%s/.gelper", Path);
+    snprintf(ConfigFilePath, LEN, "%s/.mix/gelper/config.txt", Path);
+    snprintf(GelperFolderPath, LEN, "%s/.mix/gelper", Path);
     //
     remove(ConfigFilePath);
     rmdir(GelperFolderPath);
