@@ -22,8 +22,8 @@ bool VerifyPath()
         Path = Posix_Path();
     #endif
 
-    snprintf(ConfigFilePath, LEN, "%s/.gelper/config.txt", Path);
-    snprintf(ConfigDirectory, LEN, "%s/.gelper", Path);
+    snprintf(ConfigFilePath, LEN, "%s/.mix/gelper/config.txt", Path);
+    snprintf(ConfigDirectory, LEN, "%s/.mix/gelper", Path);
 
     cfg = fopen(ConfigFilePath, "r");
 
