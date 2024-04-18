@@ -21,10 +21,10 @@ char* GetUsername()
 
     #ifdef _WIN32
         Path = Win32_Path();
-        snprintf(FormattedPath, LEN, "%s\\.gelper\\config.txt", Path);
+        snprintf(FormattedPath, LEN, "%s\\.mix\\gelper\\config.txt", Path);
     #else
         Path = Posix_Path();
-        snprintf(FormattedPath, LEN, "%s/.gelper/config.txt", Path);
+        snprintf(FormattedPath, LEN, "%s/.mix/gelper/config.txt", Path);
     #endif
 
     GelperCfg = fopen(FormattedPath, "r");
