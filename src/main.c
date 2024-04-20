@@ -3,6 +3,7 @@
 
 #include <stdlib.h>
 #include <string.h>
+#include <stdio.h>
 
 int main(int argc, char** argv)
 {
@@ -94,6 +95,13 @@ int main(int argc, char** argv)
         strcmp(argv[1], "/?")         == 0 
     ){
         Help();
+        return 0;
+    }
+
+    else if (
+        strcmp(argv[1], "--ver") == 0
+    ){
+        printf("v2.3.2 stable");
         return 0;
     }
 
