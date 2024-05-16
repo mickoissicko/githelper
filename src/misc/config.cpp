@@ -2,12 +2,39 @@
 #include "../../common/calls.h"
 
 #include <filesystem> // i like modern C++
+#include <unistd.h>
 #include <iostream>
+#include <cstdlib>
 #include <fstream>
 #include <string>
 
 namespace fs = std::filesystem;
 using namespace std;
+
+void InitPaths()
+{
+    char* Path;
+
+    #ifdef _WIN32
+       Path = Win32_Path();
+    #else
+       Path = Posix_Path();
+    #endif
+
+    chdir(Path);
+
+    if (!fs::exists(".mix"))
+        fs::create_directory(".mix");
+
+    if (chdir(".mix") != 0)
+    {
+        std::cerr << "Error" << '\n';
+        exit(1);
+    }
+
+    if (!fs::exists("gelper"))
+        fs::create_directory("gelper");
+}
 
 int Configger(int argc, char** argv)
 {
