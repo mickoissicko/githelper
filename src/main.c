@@ -7,6 +7,10 @@
 
 int main(int argc, char** argv)
 {
+    printf("Initialising paths...\n");
+
+    InitPaths();
+
     VerifyArguments(argc, argv);
 
     int index = 1;
