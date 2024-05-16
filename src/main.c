@@ -98,7 +98,7 @@ int main(int argc, char** argv)
     else if (
         strcmp(argv[1], "--ver") == 0
     ){
-        printf("v2.4.0 stable");
+        printf("v2.4.1 stable");
         return 0;
     }
 
