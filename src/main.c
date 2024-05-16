@@ -54,13 +54,6 @@ int main(int argc, char** argv)
     }
 
     else if (
-        strcmp(argv[1], "--clean") == 0
-    ){
-        DeleteTemp();
-        return 0;
-    }
-
-    else if (
         strcmp(argv[1], "--ccgp") == 0 ||
         strcmp(argv[1], "--ccga") == 0 ||
         strcmp(argv[1], "--cgp")  == 0 ||
