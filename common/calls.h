@@ -24,6 +24,7 @@ void PromptForPush();
 void RemoveConfig();
 void DeleteTemp();
 void CreateTemp();
+void InitPaths();
 void StageTwo();
 void Commit();
 void Help();
