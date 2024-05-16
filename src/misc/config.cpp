@@ -11,8 +11,13 @@
 namespace fs = std::filesystem;
 using namespace std;
 
+#define MAX_PATH_LEN 8192
+
 void InitPaths()
 {
+    char Cwd[MAX_PATH_LEN];
+    getcwd(Cwd, sizeof(Cwd));
+
     char* Path;
 
     #ifdef _WIN32
@@ -34,6 +39,8 @@ void InitPaths()
 
     if (!fs::exists("gelper"))
         fs::create_directory("gelper");
+
+    chdir(Cwd);
 }
 
 int Configger(int argc, char** argv)
